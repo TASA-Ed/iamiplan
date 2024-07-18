@@ -1,0 +1,124 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="ViewPager">
+<ppt>width=-1
+height=-1
+ut_above=3</ppt>
+<event></event>
+</View>
+<View id="9" did="1" type="CardView">
+<ppt>width=-1
+height=60dp
+ut_alignParentBottom=true
+app_CardElevation=1dp
+app_CardcornerRadius=0dp</ppt>
+<event></event>
+</View>
+<View id="3" did="9" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+background=white</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center</ppt>
+<event><eventItme type="clicki">us(2,"currentitem",0)
+dht(dh, 0, 0, -25, 0)
+dh(dh, "duration", 250)
+us(6, "dh", dh)</eventItme></event>
+</View>
+<View id="6" did="4" type="ImageView">
+<ppt>width=25dp
+height=25dp
+src=@img/IconParkSolidPlan.png</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center</ppt>
+<event><eventItme type="clicki">us(2,"currentitem",1)
+dht(dh, 0, 0, -25, 0)
+dh(dh, "duration", 250)
+us(8, "dh", dh)</eventItme></event>
+</View>
+<View id="8" did="5" type="ImageView">
+<ppt>width=30dp
+height=30dp
+src=@img/SolarNotesBoldDuotone.png</ppt>
+<event></event>
+</View>
+<View id="10" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+ut_above=9
+gravity=right</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="CardView">
+<ppt>width=60dp
+height=60dp
+app_CardcornerRadius=114514dp
+app_CardElevation=0dp
+layout_marginRight=25dp
+layout_marginBottom=45dp
+layout_marginTop=10dp</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+BackgroundColor=#AFEEEE
+BackgroundRipple=#ffffffff</ppt>
+<event><eventItme type="clicki">ug(2,"currentitem",hdct)
+f(hdct==0)
+{
+  uigo("待办编辑.iyu")
+  sss vmakenew=true
+}
+else f(hdct==1)
+{
+  fn lang.code("tw1")
+  tw(sss.vtext)
+}
+//判断滑动窗体所在界面执行对应代码</eventItme></event>
+</View>
+<View id="13" did="12" type="ImageView">
+<ppt>width=40dp
+height=40dp
+src=@img/MaterialSymbolsAdd.png</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">uycl("#F5F5F5",false,0)
+//改变状态栏
+
+addv(2,"待办.iyu|记账.iyu",hdct)
+//初始化滑动窗体
+</eventItme><eventItme type="loadingComplete">fn v7list.reload()
+//模块载入列表
+uls(待办.5,sss.db,"待办事项.iyu",-1,-2)
+//加载列表
+
+swh("w",vwa)
+s-(195,vwa)
+us(待办.6,"layout_marginleft",vwa+"dp")
+//预留关于按钮
+
+fn lang.chdh("待办")
+fn lang.chdh("记账")
+</eventItme><eventItme type="restart">fn v7list.reload()
+uls(待办.5,sss.db,"待办事项.iyu",-1,-2)
+//重新加载</eventItme></UIEventset>

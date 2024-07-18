@@ -1,0 +1,27 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+BackgroundColor=#F5F5F5</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=100dp
+orientation=vertical
+gravity=center_vertical</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text=记账
+textColor=#2F4F4F
+textSize=25sp
+layout_marginLeft=25dp
+typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
+textStyle=bold
+layout_marginTop=35dp</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

@@ -1,0 +1,26 @@
+# 注释
+# lang文件2.0版本
+[mian.3.text]=Mi计划
+[mian.6.text]=Copyright © 2020-2024 TASA-Ed工作室
+
+[待办.3.text]=待办
+[记账.3.text]=记账
+
+[edit.16.hint]=待办标题
+[edit.19.hint]=待办内容
+[edit.12.text]=保存
+
+[about.18.text]=Mi计划
+[about.9.text]=TASA-Ed工作室制作
+[about.22.text]=启动时无需等待
+[about.3.app_title]=关于
+[about.26.text]=语言
+
+[code.v1.utw]=警告
+[code.v2.utw]=是否删除此待办？
+[code.v3.utw]=确认
+[code.v4.utw]=取消
+[code.tw1.tw]=记账功能暂未上线，敬请期待~
+[code.tit1.utw]=语言
+[code.tw2.tw]=重启软件生效
+[code.tw3.tw]=语言不存在

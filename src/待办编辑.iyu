@@ -1,0 +1,183 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+background=white</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=60dp
+orientation=horizontal</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="7" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=left</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="ImageView">
+<ppt>width=20dp
+height=20dp
+src=@img/TopcoatBack.png
+layout_marginLeft=15dp</ppt>
+<event><eventItme type="clicki">end()</eventItme></event>
+</View>
+<View id="5" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+layout_weight=1</ppt>
+<event></event>
+</View>
+<View id="6" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="9" did="6" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=right</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="CardView">
+<ppt>width=55dp
+height=30dp
+app_CardcornerRadius=7.5dp
+app_CardElevation=0dp
+layout_marginRight=15dp</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+BackgroundColor=#1E90FF
+BackgroundRipple=#ffffffff</ppt>
+<event><eventItme type="clicki">ug(16,"text",name)
+ug(19,"text",cont)
+//获取编辑框内容
+//判断是否为创建新文件
+f(sss.vmakenew==true)
+{
+  fr("@files/uuid.json",ujs)
+  sr(ujs,"v#:name;",name,ujs)
+  sr(ujs,"v#:content;",cont,ujs)
+  //读取源文件并替换
+  json(sss.tojson,"get","idlist",id)
+  sl(id,"\,",idl)
+  sgszl(idl,idll)
+  //提取总行数
+  json(sss.tojson,"get","fdel",del)
+  s+(del,idll)
+  //添加上被删除的文件总数,防止id冲突
+  fw("$todo/uuid"+idll+".json",ujs)
+  //获取UUID
+  sr(id,"\,NaN","\,"+idll+"\,NaN",idoo)
+  //syso(idoo)
+  json(sss.tojson,"set","idlist",idoo)
+  json(sss.tojson,"json",jso)
+  fw("$todo/todolist.json",jso)
+  //最后写入
+  end()
+  endcode
+}
+fr("$todo/uuid"+sss.vuuid+".json",uidc)
+json(uidc,uujs)
+json(uujs,"set","name",name)
+json(uujs,"set","content",cont)
+json(uujs,"json",jsto)
+fw("$todo/uuid"+sss.vuuid+".json",jsto)
+//写入被修改的数据
+end()</eventItme></event>
+</View>
+<View id="12" did="11" type="TextView">
+<ppt>width=-2
+height=-2
+text=保存
+textStyle=bold
+textColor=#ffffffff
+textSize=14sp
+clickable=false</ppt>
+<event></event>
+</View>
+<View id="14" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="15" did="14" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="16" did="15" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+layout_marginLeft=30dp
+layout_marginRight=30dp
+layout_marginTop=15dp
+layout_marginBottom=15dp
+hint=待办标题
+background=
+textSize=18sp
+textStyle=bold</ppt>
+<event></event>
+</View>
+<View id="17" did="14" type="LinearLayout">
+<ppt>width=-1
+height=5dp
+orientation=vertical
+layout_marginLeft=20dp
+layout_marginRight=20dp
+BackgroundColor=#F5F5F5</ppt>
+<event></event>
+</View>
+<View id="18" did="14" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="19" did="18" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+layout_marginLeft=30dp
+layout_marginRight=30dp
+layout_marginTop=15dp
+layout_marginBottom=15dp
+hint=待办内容
+background=
+textSize=16sp</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">uycl("#ffffffff",true)
+//判断是否创建新待办
+f(sss.vmakenew!=true)
+{
+us(16,"text",sss.vname)
+us(19,"text",sss.vcont)
+}
+fn lang.age("edit")
+</eventItme></UIEventset>

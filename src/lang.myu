@@ -1,0 +1,46 @@
+fn age(uiid)
+for(data;sss.language)
+{
+  sj(data,"[","]",dct)
+  sl(dct,".",dl)
+  sgsz(dl,0,uid)
+  f(uid==uiid)
+  {
+    sgsz(dl,1,kid)
+    sgsz(dl,2,type)
+    sj(data,"=",null,txt)
+    us(kid,type,txt)
+  }
+}
+end fn
+fn chdh(uiid)
+for(data;sss.language)
+{
+  sj(data,"[","]",dct)
+  sl(dct,".",dl)
+  sgsz(dl,0,uid)
+  f(uid==uiid)
+  {
+    sgsz(dl,1,kid)
+    sgsz(dl,2,type)
+    sj(data,"=",null,txt)
+    us(uiid+"."+kid,type,txt)
+  }
+}
+end fn
+fn code(codeid)
+for(data;sss.language)
+{
+  sj(data,"[","]",dct)
+  sl(dct,".",dl)
+  sgsz(dl,0,uid)
+  f(uid=="code")
+  {
+    sgsz(dl,1,uid)
+    f(uid==codeid)
+    {
+      sj(data,"=",null,sss.vtext)
+    }
+  }
+}
+end fn

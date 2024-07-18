@@ -1,0 +1,34 @@
+fn reload()
+ula(sss.db,"clear")
+//清空
+json(sss.tojson,"get","idlist",idlist)
+sl(idlist,"\,",idsl)
+//读取ID列表
+for(uid;idsl)
+{
+  f(uid==0 || uid=="NaN")
+  {
+  }
+  //忽略ID 0和NaN
+  else
+  {
+    fr("$todo/uuid"+uid+".json",uidc)
+    json(uidc,uujs)
+    json(uujs,"get","content",cont)
+    json(uujs,"get","name",name)
+    json(uujs,"get","checkbox",checkbox)
+    //读取数据
+    f(checkbox==true)
+    {
+      s check="@img/checkbox-marked-outline.png"
+    }
+    else
+    {
+      s check="@img/checkbox-blank-outline.png"
+    }
+    //更换图标
+    ula(sss.db,待办.5="待办事项",10=name,11=cont,6=check,-1=checkbox,-2=uid)
+  }
+  
+}
+end fn

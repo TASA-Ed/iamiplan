@@ -1,0 +1,159 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+layout_marginBottom=10dp</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="CardView">
+<ppt>width=-1
+height=-2
+app_CardcornerRadius=10dp
+app_CardElevation=0dp</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=horizontal
+background=white
+</ppt>
+<event><eventItme type="clicki">ulag(st_vW,-2,sss.vuuid)
+fr("$todo/uuid"+sss.vuuid+".json",uidc)
+json(uidc,uujs)
+json(uujs,"get","name",sss.vname)
+json(uujs,"get","content",sss.vcont)
+//读取数据
+sss vmakenew=false
+//非创建新文件
+uigo("待办编辑.iyu")
+//跳转到编辑</eventItme><eventItme type="press">ulag(st_vW,-2,uids)
+//syso(uids)
+fn lang.code("v1")
+s tit=sss.vtext
+fn lang.code("v2")
+s con=sss.vtext
+fn lang.code("v3")
+s ch1=sss.vtext
+fn lang.code("v4")
+s ch2=sss.vtext
+
+utw("@img/alert-outline.png",tit,con,ch1,ch2,false,v)
+{
+  fd("$todo/uuid"+uids+".json",ls)
+  //删除源文件
+  json(sss.tojson,"get","idlist",idl)
+  //syso(idl)
+  sr(idl,"\,"+uids+"\,","\,",idl)
+  json(sss.tojson,"set","idlist",idl)
+  //删除ID并写入
+  json(sss.tojson,"get","fdel",del)
+  s+(1,del)
+  json(sss.tojson,"set","fdel",del)
+  //添加被删除的文件总数
+  json(sss.tojson,"json",jso)
+  fw("$todo/todolist.json",jso)
+  //最终写入文件
+  fn v7list.reload()
+  uls(待办.5,sss.db,"待办事项.iyu",-1,-2)
+  //重载列表
+  //uigo("主界面.iyu")
+  //end()
+}
+else
+{
+}</eventItme></event>
+</View>
+<View id="5" did="3" type="LinearLayout">
+<ppt>width=60dp
+height=-1
+orientation=horizontal
+gravity=center
+clickable=false</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="ImageView">
+<ppt>width=30dp
+height=30dp
+src=@img/checkbox-marked-outline.png</ppt>
+<event><eventItme type="clicki">ulag(st_vW,-1,check)
+f(check==true)
+{
+  //tw("未完成状态")
+  us(st_vId,"src","@img/checkbox-blank-outline.png")
+  ulag(st_vW,-2,uid)
+  fr("$todo/uuid"+uid+".json",uidc)
+  json(uidc,uujs)
+  json(uujs,"set","checkbox",false)
+  json(uujs,"json",jsto)
+  fw("$todo/uuid"+uid+".json",jsto)
+  //写入状态
+  fn v7list.reload()
+  uls(待办.5,sss.db,"待办事项.iyu",-1,-2)
+  //重载列表
+}
+else
+{
+  //tw("已完成状态")
+  us(st_vId,"src","@img/checkbox-marked-outline.png")
+  ulag(st_vW,-2,uid)
+  fr("$todo/uuid"+uid+".json",uidc)
+  json(uidc,uujs)
+  json(uujs,"set","checkbox",true)
+  json(uujs,"json",jsto)
+  fw("$todo/uuid"+uid+".json",jsto)
+  //写入状态
+  fn v7list.reload()
+  uls(待办.5,sss.db,"待办事项.iyu",-1,-2)
+  //重载列表
+}
+</eventItme></event>
+</View>
+<View id="7" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+clickable=false</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=bottom
+clickable=false</ppt>
+<event></event>
+</View>
+<View id="10" did="8" type="TextView">
+<ppt>width=-2
+height=-2
+text=我的第一项待办，我觉得我是一个非常自律的人
+textColor=#ff000000
+textSize=15sp
+layout_marginTop=10dp
+textStyle=bold
+layout_marginRight=15dp
+clickable=false</ppt>
+<event></event>
+</View>
+<View id="9" did="7" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+clickable=false</ppt>
+<event></event>
+</View>
+<View id="11" did="9" type="TextView">
+<ppt>width=-2
+height=-2
+text=我需要在今天下午5:20上厕所，然后看十页《母猪的产后护理》，最后在8:00之前睡觉。
+textColor=#696969
+layout_marginBottom=10dp
+layout_marginRight=10dp
+textSize=13sp
+clickable=false</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

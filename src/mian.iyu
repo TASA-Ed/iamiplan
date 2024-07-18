@@ -1,0 +1,128 @@
+<View id="4" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="1" did="4" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+background=white
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="ImageView">
+<ppt>width=75dp
+height=75dp
+src=@icon_iapp.png</ppt>
+<event></event>
+</View>
+<View id="3" did="1" type="TextView">
+<ppt>width=-2
+height=-2
+text=Mi计划
+textColor=#C0C0C0
+textSize=12.5sp
+layout_margin=10dp
+layout_marginBottom=40dp
+typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=center
+ut_alignBottom=1</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="TextView">
+<ppt>width=-2
+height=-2
+text=Copyright © 2020-2024 TASA-Ed工作室
+textColor=#C0C0C0
+textSize=10sp
+layout_marginBottom=5dp</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">sss jsver=1.1
+//设置文件版本
+uycl("#ffffffff",true)
+//改变状态栏
+fr("$todo/lang",lna)
+f(lna==null)
+{
+  fw("$todo/lang","zh_CN")
+  fr("$todo/lang",lna)
+}
+fr("@langages/"+lna+".lang",lang)
+sl(lang,"\n",sss.language)
+fn lang.age("mian")
+//语言初始化
+fe("$todo/todolist.json",fe2)
+f(fe2==false)
+{
+  fc("@files/todolist.json","$todo/todolist.json",c)
+  fc("@files/uuid1.json","$todo/uuid1.json",c)
+  us(3,"text","感谢您选择了本软件，欢迎使用")
+}
+//判断是否为第一次进入软件
+else
+{
+  t()
+  {
+    ufnsui()
+    {
+      hs("http://api.tasaed.top/rw",mryy)
+      syso(mryy)
+      f(mryy==null)
+      {
+      }
+      else
+      {
+        us(3,"text",mryy)
+      }
+    }
+  }
+  //获取每日一言
+}
+
+fr("$todo/todolist.json",todolist)
+//读取列表文件
+
+json(todolist,sss.tojson)
+//解析为json放入全局变量,方便调用
+
+json(sss.tojson,"get","jsv",jsv)
+//预留
+s2(sss.jsver-jsv,jsv)
+syso(jsv)
+f(jsv&gt;0.1)
+{
+  utw("@img/alert-outline.png","警告","json版本差异过大，强行升级json版本可能导致部分数据丢失，是否继续升级？","是","否",true,v)
+  {
+  }
+  else
+  {
+  }
+}
+
+/.</eventItme><eventItme type="loadingComplete">json(sss.tojson,"get","nowait",hui)
+f(hui==false)
+{
+  t()
+  {
+    stop(1000)
+    ufnsui()
+    {
+      uigo("主界面.iyu")
+      end()
+    }
+  }
+}
+else
+{
+  uigo("主界面.iyu")
+  end()
+}
+//倒计时跳转界面</eventItme></UIEventset>
