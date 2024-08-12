@@ -1,4 +1,5 @@
 # lang v2.0
+# A # at the beginning indicates a comment
 [mian.3.text]=Mi Plan
 [mian.6.text]=Copyright © 2020-2024 TASA-Ed Studio
 
@@ -8,12 +9,16 @@
 [edit.16.hint]=To-do title
 [edit.19.hint]=To-do content
 [edit.12.text]=Save
+[edit.25.text]=Scheduled reminders
+[edit.42.text]=We will be in
+[edit.44.text]=Minutes
+[edit.45.text]=After reminding you
 
-[about.18.text]=Mi Plan
-[about.9.text]=TASA-Ed Studio Productions
-[about.22.text]=No waiting at startup
-[about.3.app_title]=About
-[about.26.text]=Langage
+[关于.18.text]=Mi Plan
+[关于.9.text]=TASA-Ed Studio Productions
+[关于.22.text]=No waiting at startup
+[关于.29.text]=About
+[关于.26.text]=Langage
 
 [code.v1.utw]=Warns
 [code.v2.utw]=Are you deleting this to-do?
@@ -23,3 +28,10 @@
 [code.tit1.utw]=Langage
 [code.tw2.tw]=Reboot software to take effect
 [code.tw3.tw]=Language does not exist
+[code.re1.utw]=Be sure to turn on the notification permission before using it, keep the software running in the background, and avoid reminder failures.
+[code.rect1.tw]=The maximum setting is alerted after 90 minutes.
+[code.rect2a.tw]=Will be in 
+[code.rect2b.tw]= minutes after reminding you.
+[code.editw1.tw]=Content and title must not be empty
+[code.upjsvtit.utw]=Upgrade the JSON version
+[code.upjsv1.tw]=Do you want to upgrade the JSON version? If you do not upgrade, you will not be able to use the software.

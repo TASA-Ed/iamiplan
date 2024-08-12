@@ -32,3 +32,46 @@ for(uid;idsl)
   
 }
 end fn
+
+fn rdvalue(vnamec)
+//读取value.prop
+sj(sss.value,vnamec+"#=","\n",vusl)
+f(vusl?"loadfile:")
+{
+  sj(vusl,"loadfile:",null,ume)
+  fr(ume,vusl)
+}
+sss vals=vusl
+end fn
+
+fn uuid()
+//uuid生成
+sran(1,999,va1)
+sran(1,999,va2)
+sran(1,999,va2)
+sran(1,99,va4)
+ss(va1+va2+va3+va4,vagf)
+sran(1,9,va5)
+s/(va5,vagf)
+sran(1,9999,va6)
+s*(va6,vagf)
+sss urid=vagf
+end fn
+
+fn uuidfor32()
+//给32位手机提供的UUID生成
+sran(1,999,va1)
+sran(1,999,va2)
+sran(1,999,va3)
+sran(1,99999,va4)
+sran(1,9999,va5)
+ss(va1+va2+va3,vasg)
+ss(va4+va5,vahg)
+s+(vasg,vahg)
+sss urid32=vahg
+end fn
+
+fn copying()
+s license="Mi Plan MIT LICENSE Copyright (C) 2024 TASA-Ed Studio"
+syso(license)
+end fn

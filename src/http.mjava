@@ -1,0 +1,85 @@
+//未知源作者制作
+//此代码属于搬运
+import java.io.*;
+import java.net.*;
+
+//get
+private static String get(String urlstr)
+{
+  
+  StringBuilder getResponse = new StringBuilder();
+  HttpURLConnection connection =null;
+  BufferedReader reader = null;
+  try{
+    URL url = new URL(urlstr);
+    connection = (HttpURLConnection) url.openConnection();
+    connection.setRequestMethod("GET");
+    connection.setConnectTimeout(8000);
+    connection.setReadTimeout(8000);
+    InputStream inputStream = connection.getInputStream();
+    //对获取到的输入流进行读取
+    reader = new BufferedReader(new InputStreamReader(inputStream));
+    String line;
+    while((line=reader.readLine())!=null){
+      getResponse.append(line+"\n");
+    }
+  }
+  catch(Exception e){
+    
+  }
+  finally
+  {
+    if(reader!=null){
+      try{
+        reader.close();
+      }
+      catch(IOException e){}
+    }
+    if(connection!=null){
+      connection.disconnect();
+    }
+  }
+  return getResponse.toString();
+}
+
+
+//post
+private static String post(String urlstr,String data)
+{
+  
+  StringBuilder postResponse = new StringBuilder();
+  HttpURLConnection connection =null;
+  BufferedReader reader = null;
+  try{
+    URL url = new URL(urlstr);
+    connection = (HttpURLConnection) url.openConnection();
+    connection.setRequestMethod("POST");
+    connection.setConnectTimeout(8000);
+    connection.setReadTimeout(8000);
+    DataOutputStream dos = new DataOutputStream(connection.getOutputStream());
+    dos.writeBytes(data);
+    InputStream inputStream = connection.getInputStream();
+    //对获取到的输入流进行读取
+    reader = new BufferedReader(new InputStreamReader(inputStream));
+    String line;
+    while((line=reader.readLine())!=null){
+      postResponse.append(line+"\n");
+    }
+  }
+  catch(Exception e){
+    
+  }
+  finally
+  {
+    if(reader!=null){
+      try{
+        reader.close();
+      }
+      catch(IOException e){}
+    }
+    if(connection!=null){
+      connection.disconnect();
+    }
+  }
+  return postResponse.toString();
+}

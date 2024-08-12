@@ -47,10 +47,6 @@ utw("@img/alert-outline.png",tit,con,ch1,ch2,false,v)
   sr(idl,"\,"+uids+"\,","\,",idl)
   json(sss.tojson,"set","idlist",idl)
   //删除ID并写入
-  json(sss.tojson,"get","fdel",del)
-  s+(1,del)
-  json(sss.tojson,"set","fdel",del)
-  //添加被删除的文件总数
   json(sss.tojson,"json",jso)
   fw("$todo/todolist.json",jso)
   //最终写入文件

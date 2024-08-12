@@ -1,4 +1,9 @@
-<View id="1" did="0" type="LinearLayout">
+<View id="28" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="1" did="28" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical
@@ -73,24 +78,27 @@ BackgroundColor=#1E90FF
 BackgroundRipple=#ffffffff</ppt>
 <event><eventItme type="clicki">ug(16,"text",name)
 ug(19,"text",cont)
+f(name=="" || cont=="")
+{
+  fn lang.code("editw1")
+  s editw1=sss.vtext
+  tw(editw1)
+  endcode
+}
 //获取编辑框内容
 //判断是否为创建新文件
 f(sss.vmakenew==true)
 {
-  fr("@files/uuid.json",ujs)
-  sr(ujs,"v#:name;",name,ujs)
-  sr(ujs,"v#:content;",cont,ujs)
+  fn v7list.rdvalue("te_uuid")
+  sr(sss.vals,"v#:^name^;",name,ujs)
+  sr(ujs,"v#:#content#;",cont,ujs)
   //读取源文件并替换
   json(sss.tojson,"get","idlist",id)
-  sl(id,"\,",idl)
-  sgszl(idl,idll)
-  //提取总行数
-  json(sss.tojson,"get","fdel",del)
-  s+(del,idll)
-  //添加上被删除的文件总数,防止id冲突
-  fw("$todo/uuid"+idll+".json",ujs)
+  fn v7list.uuidfor32()
+  //随机生成一个UUID
+  fw("$todo/uuid"+sss.urid32+".json",ujs)
   //获取UUID
-  sr(id,"\,NaN","\,"+idll+"\,NaN",idoo)
+  sr(id,"\,NaN","\,"+sss.urid32+"\,NaN",idoo)
   //syso(idoo)
   json(sss.tojson,"set","idlist",idoo)
   json(sss.tojson,"json",jso)
@@ -115,13 +123,109 @@ text=保存
 textStyle=bold
 textColor=#ffffffff
 textSize=14sp
-clickable=false</ppt>
+clickable=false
+layout_margintop=0dp
+layout_marginleft=0dp</ppt>
 <event></event>
 </View>
 <View id="14" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="20" did="14" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=20dp
+layout_marginRight=20dp
+app_CardcornerRadius=10dp
+app_CardElevation=0dp
+layout_marginTop=10dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="21" did="20" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+BackgroundColor=#F5F5F5</ppt>
+<event><eventItme type="clicki">us(29,"visibility","visible")
+dht(dh,0,0,1000,0)
+dh(dh,"duration",500)
+us(30,"dh",dh)
+json(sss.tojson,"get","tipsre",tips)
+f(tips==false)
+{
+  fn lang.code("v1")
+  s tit=sss.vtext
+  fn lang.code("re1")
+  s cont=sss.vtext
+  fn lang.code("v3")
+  s ch1=sss.vtext
+  fn lang.code("v4")
+  s ch2=sss.vtext
+  utw("@img/alert-outline.png",tit,cont,ch1,ch2,true,v)
+  {
+    json(sss.tojson,"set","tipsre",true)
+    json(sss.tojson,"json",vmw)
+    fw("$todo/todolist.json",vmw)
+  }
+  else
+  {
+    dht(dh,0,0,0,1500)
+    dh(dh,"duration",500)
+    us(30,"dh",dh)
+    t()
+    {
+      stop(400)
+      
+      ufnsui()
+      {
+        us(29,"visibility","gone")
+      }
+    }
+  }
+}</eventItme></event>
+</View>
+<View id="22" did="21" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center_vertical</ppt>
+<event></event>
+</View>
+<View id="25" did="22" type="TextView">
+<ppt>width=-2
+height=-2
+text=定时提醒
+textColor=#333333
+textStyle=bold
+layout_marginLeft=20dp
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="24" did="21" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="26" did="24" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=right</ppt>
+<event></event>
+</View>
+<View id="27" did="26" type="ImageView">
+<ppt>width=15dp
+height=15dp
+src=@img/retouch_2024071719375294.png
+layout_marginRight=20dp</ppt>
 <event></event>
 </View>
 <View id="15" did="14" type="LinearLayout">
@@ -172,12 +276,213 @@ background=
 textSize=16sp</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">uycl("#ffffffff",true)
+<View id="29" did="28" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom
+BackgroundColor=#60000000
+visibility=gone
+layout_margintop=-138dp
+layout_marginleft=0dp</ppt>
+<event><eventItme type="clicki">dht(dh,0,0,0,1500)
+dh(dh,"duration",500)
+us(30,"dh",dh)
+t()
+{
+  stop(400)
+  
+  ufnsui()
+  {
+    us(29,"visibility","gone")
+  }
+}</eventItme></event>
+</View>
+<View id="30" did="29" type="RelativeLayout">
+<ppt>width=-2
+height=-2</ppt>
+<event><eventItme type="clicki">syso(1)</eventItme></event>
+</View>
+<View id="31" did="30" type="CardView">
+<ppt>width=-1
+height=250dp
+app_CardcornerRadius=25dp
+app_CardElevation=0dp</ppt>
+<event></event>
+</View>
+<View id="32" did="30" type="LinearLayout">
+<ppt>width=-1
+height=225dp
+orientation=vertical
+ut_alignBottom=31
+BackgroundColor=#ffffffff</ppt>
+<event></event>
+</View>
+<View id="33" did="32" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="34" did="33" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=right</ppt>
+<event></event>
+</View>
+<View id="35" did="34" type="CardView">
+<ppt>width=55dp
+height=30dp
+app_CardcornerRadius=7.5dp
+app_CardElevation=0dp
+layout_marginRight=25dp</ppt>
+<event></event>
+</View>
+<View id="36" did="35" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+BackgroundColor=#1E90FF
+BackgroundRipple=#ffffffff</ppt>
+<event><eventItme type="clicki">ug(43,"text",ufs)
+
+f(ufs&gt;90)
+{
+  fn lang.code("rect1")
+  s rect1=sss.vtext
+  tw(rect1)
+  endcode
+}
+else{
+  fn lang.code("rect2a")
+  s rect2a=sss.vtext
+  fn lang.code("rect2b")
+  s rect2b=sss.vtext
+  s(60*ufs*1000,yudr)
+  tw(rect2a+ufs+rect2b)
+  t()
+  {
+    stop(yudr)
+    ftz("提醒",sss.vname,sss.vcont,null)
+    {
+      bfm("@adu/squelch.ogg")
+    }
+  }
+  
+}
+dht(dh,0,0,0,1500)
+dh(dh,"duration",500)
+us(30,"dh",dh)
+t()
+{
+  stop(400)
+  
+  ufnsui()
+  {
+    us(29,"visibility","gone")
+  }
+}</eventItme></event>
+</View>
+<View id="37" did="36" type="TextView">
+<ppt>width=-2
+height=-2
+text=保存
+textStyle=bold
+textColor=#ffffffff
+textSize=14sp
+clickable=false</ppt>
+<event></event>
+</View>
+<View id="38" did="32" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_marginBottom=10dp</ppt>
+<event></event>
+</View>
+<View id="39" did="38" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="42" did="39" type="TextView">
+<ppt>width=-2
+height=-2
+text=我们将会在
+textColor=#333333
+textStyle=bold
+textSize=18sp</ppt>
+<event></event>
+</View>
+<View id="40" did="38" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+layout_weight=1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="43" did="40" type="EditText">
+<ppt>width=-2
+height=-2
+text=10
+background=
+inputType=number
+textSize=30sp
+textStyle=bold
+layout_marginLeft=5dp
+layout_marginRight=5dp
+paddingLeft=5dp
+paddingRight=5dp
+gravity=center
+singleLine=true
+maxLength=2</ppt>
+<event></event>
+</View>
+<View id="44" did="40" type="TextView">
+<ppt>width=-2
+height=-2
+text=分钟
+textColor=#ff000000
+textStyle=bold
+textSize=14sp</ppt>
+<event></event>
+</View>
+<View id="41" did="38" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center
+layout_margintop=-13dp
+layout_marginleft=0dp</ppt>
+<event></event>
+</View>
+<View id="45" did="41" type="TextView">
+<ppt>width=-2
+height=-2
+text=后提醒您完成此待办
+textColor=#333333
+textStyle=bold
+textSize=16sp</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn v7list.copying()
+//开源许可证 Open source license
+
+uycl("#ffffffff",true)
 //判断是否创建新待办
 f(sss.vmakenew!=true)
 {
 us(16,"text",sss.vname)
 us(19,"text",sss.vcont)
+us(20,"visibility","visible")
 }
 fn lang.age("edit")
 </eventItme></UIEventset>

@@ -13,7 +13,7 @@ gravity=center_vertical</ppt>
 <event></event>
 </View>
 <View id="3" did="2" type="TextView">
-<ppt>width=100dp
+<ppt>width=-2
 height=-2
 text=待办
 textColor=#2F4F4F
@@ -21,16 +21,8 @@ textSize=25sp
 layout_marginLeft=25dp
 typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
 textStyle=bold
-layout_margintop=20dp</ppt>
+layout_margintop=5dp</ppt>
 <event></event>
-</View>
-<View id="6" did="2" type="ImageButton">
-<ppt>width=50dp
-height=50dp
-src=@img/infoXH.png
-BackgroundColor=#F5F5F5
-layout_margintop=20dp</ppt>
-<event><eventItme type="clicki">uigo("关于.iyu")</eventItme></event>
 </View>
 <View id="7" did="1" type="RelativeLayout">
 <ppt>width=-1
@@ -43,19 +35,6 @@ height=-1
 layout_marginLeft=25dp
 layout_marginRight=25dp
 layout_marginTop=7.5dp</ppt>
-<event></event>
-</View>
-<View id="8" did="7" type="TextView">
-<ppt>width=-2
-height=-2
-text=当前还没有任何待办哦~
-ut_centerHorizontal=true
-layout_marginTop=100dp
-textSize=12.5dp
-textColor=#C0C0C0
-textStyle=bold
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
-visibility=gone</ppt>
 <event></event>
 </View>
 <UIEventset></UIEventset>

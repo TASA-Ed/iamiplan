@@ -1,25 +1,42 @@
-<View id="3" did="0" type="Toolbar">
-<ppt>width=-1
-height=-3
-BackgroundColor=#F5F5F5
-app_title=关于
-app_TitleColor=#ff000000</ppt>
-<event></event>
-</View>
-<View id="4" did="0" type="LinearLayout">
+<View id="27" did="0" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical
 BackgroundColor=#F5F5F5</ppt>
 <event></event>
 </View>
+<View id="28" did="27" type="LinearLayout">
+<ppt>width=-1
+height=100dp
+orientation=vertical
+gravity=center_vertical</ppt>
+<event></event>
+</View>
+<View id="29" did="28" type="TextView">
+<ppt>width=-2
+height=-2
+text=关于
+textColor=#2F4F4F
+textSize=25sp
+layout_marginLeft=25dp
+typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
+textStyle=bold
+layout_margintop=10dp</ppt>
+<event></event>
+</View>
+<View id="4" did="27" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
 <View id="5" did="4" type="CardView">
 <ppt>width=-2
 height=-2
 app_CardcornerRadius=100dp
-app_CardElevation=1dp
+app_CardElevation=0dp
 layout_gravity=center_horizontal
-layout_marginTop=10dp</ppt>
+layout_marginTop=20dp</ppt>
 <event></event>
 </View>
 <View id="6" did="5" type="ImageView">
@@ -28,24 +45,25 @@ height=80dp
 src=@icon_iapp.png</ppt>
 <event></event>
 </View>
-<View id="18" did="4" type="TextView">
+<View id="30" did="4" type="TextView">
 <ppt>width=-2
 height=-2
-text=Mi计划
+text=Version-0.2.1
 textColor=#C0C0C0
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
 textSize=15sp
-layout_gravity=center_horizontal</ppt>
+layout_gravity=center_horizontal
+typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF</ppt>
 <event></event>
 </View>
 <View id="19" did="4" type="CardView">
 <ppt>width=-1
-height=60dp
+height=55dp
 app_CardcornerRadius=10dp
 app_CardElevation=0dp
 layout_marginBottom=10dp
-layout_marginLeft=15dp
-layout_marginRight=15dp</ppt>
+layout_marginLeft=20dp
+layout_marginRight=20dp
+layout_marginTop=5dp</ppt>
 <event></event>
 </View>
 <View id="20" did="19" type="LinearLayout">
@@ -57,22 +75,48 @@ BackgroundRipple=#F5F5F5
 background=white</ppt>
 <event></event>
 </View>
-<View id="22" did="20" type="TextView">
+<View id="31" did="20" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center_vertical</ppt>
+<event></event>
+</View>
+<View id="22" did="31" type="TextView">
 <ppt>width=-2
 height=-2
 text=启动时无需等待
 textColor=#333333
-textSize=16sp
+textSize=14sp
 layout_marginLeft=20dp
 typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
 textStyle=bold
 clickable=false</ppt>
 <event></event>
 </View>
-<View id="23" did="20" type="SwitchCompat">
+<View id="32" did="20" type="LinearLayout">
 <ppt>width=-1
 height=-1
-layout_marginRight=20dp</ppt>
+orientation=vertical
+layout_weight=1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="33" did="32" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=right</ppt>
+<event></event>
+</View>
+<View id="23" did="33" type="SwitchCompat">
+<ppt>width=-2
+height=-2
+layout_marginRight=20dp
+thumbTint=#696969
+trackTint=#C0C0C0|#D3D3D3|#A9A9A9
+checked=false</ppt>
 <event><eventItme type="oncheckedchanged">f(st_iC==true)
 {
   json(sss.tojson,"set","nowait",true)
@@ -88,12 +132,12 @@ else
 </View>
 <View id="24" did="4" type="CardView">
 <ppt>width=-1
-height=60dp
+height=55dp
 app_CardcornerRadius=10dp
 app_CardElevation=0dp
 layout_marginBottom=10dp
-layout_marginLeft=15dp
-layout_marginRight=15dp</ppt>
+layout_marginLeft=20dp
+layout_marginRight=20dp</ppt>
 <event></event>
 </View>
 <View id="25" did="24" type="LinearLayout">
@@ -103,7 +147,8 @@ orientation=horizontal
 gravity=center_vertical
 BackgroundRipple=#F5F5F5
 background=white</ppt>
-<event><eventItme type="clicki">fn lang.code("tit1")
+<event><eventItme type="clicki">sdeg(2)
+fn lang.code("tit1")
 s tit=sss.vtext
 fn lang.code("v3")
 s ch1=sss.vtext
@@ -113,15 +158,7 @@ utw("@img/translate.png",tit,"语言列表.iyu",ch1,ch2,false,v)
 {
   gvs(v,2,vs)
   ug(vs,"text",g)
-  fl("@langages",false,fle)
-  for(fnam;fle)
-  {
-    ss(g+".lang",gvn)
-    f(gvn==fnam)
-    {
-      s uvs=true
-    }
-  }
+  fe("@langages/"+g+".lang",uvs)
   f(uvs==true)
   {
     fw("$todo/lang",g)
@@ -143,7 +180,7 @@ else
 height=-2
 text=语言
 textColor=#333333
-textSize=16sp
+textSize=14sp
 layout_marginLeft=20dp
 typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
 textStyle=bold
@@ -152,12 +189,12 @@ clickable=false</ppt>
 </View>
 <View id="7" did="4" type="CardView">
 <ppt>width=-1
-height=60dp
+height=55dp
 app_CardcornerRadius=10dp
 app_CardElevation=0dp
 layout_marginBottom=10dp
-layout_marginLeft=15dp
-layout_marginRight=15dp</ppt>
+layout_marginLeft=20dp
+layout_marginRight=20dp</ppt>
 <event></event>
 </View>
 <View id="8" did="7" type="LinearLayout">
@@ -180,9 +217,9 @@ clickable=false</ppt>
 <View id="9" did="8" type="TextView">
 <ppt>width=-2
 height=-2
-text=TASA-Ed 工作室 制作
+text=TASA-Ed工作室制作
 textColor=#333333
-textSize=16sp
+textSize=14sp
 layout_marginLeft=15dp
 typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
 textStyle=bold
@@ -191,12 +228,12 @@ clickable=false</ppt>
 </View>
 <View id="14" did="4" type="CardView">
 <ppt>width=-1
-height=60dp
+height=55dp
 app_CardcornerRadius=10dp
 app_CardElevation=0dp
 layout_marginBottom=10dp
-layout_marginLeft=15dp
-layout_marginRight=15dp</ppt>
+layout_marginLeft=20dp
+layout_marginRight=20dp</ppt>
 <event></event>
 </View>
 <View id="15" did="14" type="LinearLayout">
@@ -206,7 +243,10 @@ orientation=horizontal
 gravity=center_vertical
 BackgroundRipple=#F5F5F5
 background=white</ppt>
-<event><eventItme type="clicki">hws("https://github.com/TASA-Ed/iamiplan")</eventItme></event>
+<event><eventItme type="clicki">fn v7list.copying()
+//开源许可证
+
+hws("https://github.com/TASA-Ed/iamiplan")</eventItme></event>
 </View>
 <View id="16" did="15" type="ImageView">
 <ppt>width=40dp
@@ -221,21 +261,11 @@ clickable=false</ppt>
 height=-2
 text=TASA-Ed/iamiplan
 textColor=#333333
-textSize=16sp
+textSize=14sp
 layout_marginLeft=10dp
 typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
 textStyle=bold
 clickable=false</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">uycl("#F5F5F5",true)
-utb(3)
-utb("set", "dshe", true)
-utb("left",3,"@img/arrow-leftXXH.png")
-utb("set","leftck",3)
-{
-end()
-}
-fn lang.age("about")
-json(sss.tojson,"get","nowait",nw)
-us(23,"checked",nw)</eventItme></UIEventset>
+<UIEventset></UIEventset>

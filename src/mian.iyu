@@ -22,10 +22,12 @@ src=@icon_iapp.png</ppt>
 height=-2
 text=Mi计划
 textColor=#C0C0C0
-textSize=12.5sp
-layout_margin=10dp
+textSize=13sp
+layout_marginTop=10dp
 layout_marginBottom=40dp
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF</ppt>
+typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
+layout_marginLeft=15dp
+layout_marginRight=15dp</ppt>
 <event></event>
 </View>
 <View id="5" did="4" type="LinearLayout">
@@ -45,7 +47,9 @@ textSize=10sp
 layout_marginBottom=5dp</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">sss jsver=1.1
+<UIEventset><eventItme type="loading">fn v7list.copying()
+//开源许可证 Open source license
+sss jsver=1.2
 //设置文件版本
 uycl("#ffffffff",true)
 //改变状态栏
@@ -59,22 +63,39 @@ fr("@langages/"+lna+".lang",lang)
 sl(lang,"\n",sss.language)
 fn lang.age("mian")
 //语言初始化
+fr("@files/value.prop",sss.value)
+//获取值文件内容
 fe("$todo/todolist.json",fe2)
 f(fe2==false)
 {
-  fc("@files/todolist.json","$todo/todolist.json",c)
-  fc("@files/uuid1.json","$todo/uuid1.json",c)
+  fn v7list.rdvalue("de_vlist")
+  //syso(sss.vals)
+  fw("$todo/todolist.json",sss.vals)
+  //读取值文件并写入todolist
+  fn v7list.rdvalue("te_uuid")
+  s uuid1=sss.vals
+  fn v7list.rdvalue("de_name")
+  s name=sss.vals
+  fn v7list.rdvalue("de_cont")
+  s cont=sss.vals
+  sr(uuid1,"v#:^name^;",name,uuid1)
+  sr(uuid1,"v#:#content#;",cont,uuid1)
+  fw("$todo/uuid1.json",uuid1)
+  //读取值文件替换并写入示例
   us(3,"text","感谢您选择了本软件，欢迎使用")
+  //ftz("通知","申请","通知，权限",null)
+  //{
+  //}
 }
 //判断是否为第一次进入软件
 else
 {
   t()
   {
+    call(mryy,"mjava","http.get","https://api.tasaed.top/rw")
+    syso(mryy)
     ufnsui()
     {
-      hs("http://api.tasaed.top/rw",mryy)
-      syso(mryy)
       f(mryy==null)
       {
       }
@@ -86,7 +107,6 @@ else
   }
   //获取每日一言
 }
-
 fr("$todo/todolist.json",todolist)
 //读取列表文件
 
@@ -94,25 +114,49 @@ json(todolist,sss.tojson)
 //解析为json放入全局变量,方便调用
 
 json(sss.tojson,"get","jsv",jsv)
-//预留
 s2(sss.jsver-jsv,jsv)
 syso(jsv)
-f(jsv&gt;0.1)
+//获取json版本
+f(jsv&gt;0.01)
 {
-  utw("@img/alert-outline.png","警告","json版本差异过大，强行升级json版本可能导致部分数据丢失，是否继续升级？","是","否",true,v)
+  fn lang.code("upjsvtit")
+  s tit=sss.vtext
+  fn lang.code("upjsv1")
+  s cont=sss.vtext
+  fn lang.code("v3")
+  s ch1=sss.vtext
+  fn lang.code("v4")
+  s ch2=sss.vtext
+  utw("@img/alert-outline.png",tit,cont,ch1,ch2,true,v)
   {
+    json(sss.tojson,"get","idlist",idl)
+    json(sss.tojson,"get","nowait",now)
+    fn v7list.rdvalue("de_vlist")
+    json(sss.vals,sss.tojson)
+    //syso(sss.vals)
+    json(sss.tojson,"set","idlist",idl)
+    json(sss.tojson,"set","nowait",now)
+    json(sss.tojson,"json",jso)
+    fw("$todo/todolist.json",jso)
+    //升级版本
+    //endcode
   }
   else
   {
+    end()
+    endcode
   }
 }
+//json版本升级
+/.</eventItme><eventItme type="loadingComplete">fn v7list.copying()
+//开源许可证 Open source license
 
-/.</eventItme><eventItme type="loadingComplete">json(sss.tojson,"get","nowait",hui)
+json(sss.tojson,"get","nowait",hui)
 f(hui==false)
 {
   t()
   {
-    stop(1000)
+    stop(1500)
     ufnsui()
     {
       uigo("主界面.iyu")

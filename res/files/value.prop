@@ -1,0 +1,5 @@
+te_uuid#={"name":"v#:^name^;","content":"v#:#content#;","checkbox":false}
+de_vlist#={"jsv":1.2,"idlist":"0,1,NaN","nowait":false,"tipsre":false}
+de_name#=示例：我的第一项待办，我觉得我是一个非常自律的人
+de_cont#=我需要在今天下午5:20上厕所，然后看十页《母猪的产后护理》，最后在8:00之前睡觉。
+te_expo#=loadfile:@files/expo.ntlfp

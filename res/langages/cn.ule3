@@ -1,11 +1,13 @@
-# 开头为#表示注释
-# lang文件2.0版本
+<?User-interface-LanguagE-files-v3.0>
+# 开头使用#表示注释
+{mian}
 [mian.3.text]=Mi计划
 [mian.6.text]=Copyright © 2020-2024 TASA-Ed工作室
-
+{待办}
 [待办.3.text]=待办
+{记账}
 [记账.3.text]=记账
-
+{edit}
 [edit.16.hint]=待办标题
 [edit.19.hint]=待办内容
 [edit.12.text]=保存
@@ -13,13 +15,13 @@
 [edit.42.text]=我们将会在
 [edit.44.text]=分钟
 [edit.45.text]=后提醒您完成此待办
-
+{关于}
 [关于.18.text]=Mi计划
 [关于.9.text]=TASA-Ed工作室制作
 [关于.22.text]=启动时无需等待
 [关于.29.text]=关于
 [关于.26.text]=语言
-
+{code}
 [code.v1.utw]=警告
 [code.v2.utw]=是否删除此待办？
 [code.v3.utw]=确认
@@ -35,3 +37,4 @@
 [code.editw1.tw]=内容与标题不得为空
 [code.upjsvtit.utw]=升级JSON版本
 [code.upjsv1.tw]=是否升级json版本？不升级将无法使用
+</ule3>

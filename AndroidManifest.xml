@@ -2,15 +2,14 @@
 <title>Mi计划</title>
 <icon>icon.png</icon>
 <packageName>top.tasaed.minimalistplan</packageName>
-<versionName>0.1.0</versionName>
-<versionint>1</versionint>
-<sdk>24</sdk>
+<versionName>0.2.1</versionName>
+<versionint>3</versionint>
+<sdk>25</sdk>
 <yuv>3</yuv>
 
 <remark></remark>
 <Permissions>android.permission.READ_EXTERNAL_STORAGE
-android.permission.REQUEST_INSTALL_PACKAGES
-android.permission.INTERNET
-android.permission.WRITE_EXTERNAL_STORAGE</Permissions>
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.INTERNET</Permissions>
 <createTime>2024-07-10 13:43:54</createTime>
 <upTime>2024-07-10 13:43:54</upTime>
