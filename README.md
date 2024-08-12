@@ -1,16 +1,15 @@
-# Mi计划
+# Mi计划 Mi Plan
 一个计划软件。
+A program software.
 
-## 使用教程
-如果你要在手机上导入源码，那么您不需要下载上面的那么多个文件，这只是给git使用的，您只需要点击发行版（releases）下面的最新版就可以了。
-
-## 提示
-您有问题的话，请不要找我，谢谢。
+## 构建环境 Built environment
+你需要一部搭载Android系统的手机，并下载iApp 3.0.1026及以上版本，导入源代码，即可构建。
+You'll need an Android-powered phone and download iApp 3.0.1026 and above, import the source code, and build.
 
 ---
 
-开发者:TASA_Ed工作室
+开发者:TASA-Ed工作室
+Developer:TASA_Ed Studio
 
 许可证:MIT
-
-需求:iApp 3.0.1026及以上版本
+License: MIT
