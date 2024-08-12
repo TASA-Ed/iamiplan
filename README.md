@@ -4,16 +4,24 @@
 A program software.
 
 ## 构建环境 Built environment
-你需要一部搭载Android系统的手机，并下载iApp 3.0.1026及以上版本，导入源代码，即可构建。
+此软件使用[iApp](http://v.dayx.cn:93)构建
 
-You'll need an Android-powered phone and download iApp 3.0.1026 and above, import the source code, and build.
+系统：Android 5.0及以上
+
+软件：[iApp 3.0.1027](http://v.dayx.cn:93/iappce.htm)及以上
+
+This software is built using [iApp](http://v.dayx.cn:93)
+
+System: Android 5.0 and above
+
+Software: [iApp 3.0.1027](http://v.dayx.cn:93/iappce.htm) and above
 
 ---
 
 开发者:TASA-Ed工作室
 
-Developer:TASA_Ed Studio
+Developer:TASA-Ed Studio
 
-许可证:MIT
+许可证:MIT License
 
-License: MIT
+License: MIT License
