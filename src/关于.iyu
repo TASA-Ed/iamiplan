@@ -19,7 +19,6 @@ text=关于
 textColor=#2F4F4F
 textSize=25sp
 layout_marginLeft=25dp
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
 textStyle=bold
 layout_margintop=10dp</ppt>
 <event></event>
@@ -30,49 +29,95 @@ height=-1
 orientation=vertical</ppt>
 <event></event>
 </View>
-<View id="5" did="4" type="CardView">
-<ppt>width=-2
-height=-2
-app_CardcornerRadius=100dp
-app_CardElevation=0dp
-layout_gravity=center_horizontal
-layout_marginTop=20dp</ppt>
-<event></event>
-</View>
-<View id="6" did="5" type="ImageView">
-<ppt>width=80dp
-height=80dp
-src=@icon_iapp.png</ppt>
-<event></event>
-</View>
-<View id="30" did="4" type="TextView">
-<ppt>width=-2
-height=-2
-text=Version-0.2.1
-textColor=#C0C0C0
-textSize=15sp
-layout_gravity=center_horizontal
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF</ppt>
+<View id="6" did="4" type="ImageView">
+<ppt>width=70dp
+height=70dp
+src=@icon_app.png
+layout_gravity=center
+layout_marginBottom=40dp</ppt>
 <event></event>
 </View>
 <View id="19" did="4" type="CardView">
 <ppt>width=-1
-height=55dp
-app_CardcornerRadius=10dp
+height=320dp
+app_CardcornerRadius=5dp
 app_CardElevation=0dp
-layout_marginBottom=10dp
-layout_marginLeft=20dp
-layout_marginRight=20dp
-layout_marginTop=5dp</ppt>
+layout_marginLeft=45dp
+layout_marginRight=45dp</ppt>
 <event></event>
 </View>
-<View id="20" did="19" type="LinearLayout">
+<View id="34" did="19" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+paddingTop=5dp
+paddingBottom=5dp</ppt>
+<event></event>
+</View>
+<View id="35" did="34" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+layout_weight=1</ppt>
+<event></event>
+</View>
+<View id="36" did="35" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center_vertical</ppt>
+<event></event>
+</View>
+<View id="38" did="36" type="TextView">
+<ppt>width=-2
+height=-2
+text=Version
+textColor=#333333
+textSize=15sp
+layout_marginLeft=20dp
+textStyle=bold</ppt>
+<event></event>
+</View>
+<View id="37" did="35" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="39" did="37" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=right</ppt>
+<event></event>
+</View>
+<View id="40" did="39" type="TextView">
+<ppt>width=-2
+height=-2
+text=0.3.1
+textColor=#696969
+textSize=14sp
+layout_marginRight=20dp</ppt>
+<event></event>
+</View>
+<View id="41" did="34" type="LinearLayout">
+<ppt>width=-1
+height=1dp
+orientation=vertical
+layout_marginLeft=20dp
+layout_marginRight=20dp
+BackgroundColor=#F5F5F5</ppt>
+<event></event>
+</View>
+<View id="20" did="34" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=horizontal
 gravity=center_vertical
-BackgroundRipple=#F5F5F5
-background=white</ppt>
+layout_weight=1</ppt>
 <event></event>
 </View>
 <View id="31" did="20" type="LinearLayout">
@@ -88,11 +133,8 @@ gravity=center_vertical</ppt>
 height=-2
 text=启动时无需等待
 textColor=#333333
-textSize=14sp
-layout_marginLeft=20dp
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
-textStyle=bold
-clickable=false</ppt>
+textSize=15sp
+layout_marginLeft=20dp</ppt>
 <event></event>
 </View>
 <View id="32" did="20" type="LinearLayout">
@@ -114,8 +156,6 @@ gravity=right</ppt>
 <ppt>width=-2
 height=-2
 layout_marginRight=20dp
-thumbTint=#696969
-trackTint=#C0C0C0|#D3D3D3|#A9A9A9
 checked=false</ppt>
 <event><eventItme type="oncheckedchanged">f(st_iC==true)
 {
@@ -130,25 +170,89 @@ else
   fw("$todo/todolist.json",jso)
 }</eventItme></event>
 </View>
-<View id="24" did="4" type="CardView">
+<View id="42" did="34" type="LinearLayout">
 <ppt>width=-1
-height=55dp
-app_CardcornerRadius=10dp
-app_CardElevation=0dp
-layout_marginBottom=10dp
+height=1dp
+orientation=vertical
 layout_marginLeft=20dp
-layout_marginRight=20dp</ppt>
+layout_marginRight=20dp
+BackgroundColor=#F5F5F5</ppt>
 <event></event>
 </View>
-<View id="25" did="24" type="LinearLayout">
+<View id="48" did="34" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=horizontal
 gravity=center_vertical
-BackgroundRipple=#F5F5F5
-background=white</ppt>
-<event><eventItme type="clicki">sdeg(2)
-fn lang.code("tit1")
+layout_weight=1</ppt>
+<event></event>
+</View>
+<View id="49" did="48" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center_vertical</ppt>
+<event></event>
+</View>
+<View id="50" did="49" type="TextView">
+<ppt>width=-2
+height=-2
+text=每日一言
+textColor=#333333
+textSize=15sp
+layout_marginLeft=20dp</ppt>
+<event></event>
+</View>
+<View id="51" did="48" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="52" did="51" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=right</ppt>
+<event></event>
+</View>
+<View id="53" did="52" type="SwitchCompat">
+<ppt>width=-2
+height=-2
+layout_marginRight=20dp
+checked=false</ppt>
+<event><eventItme type="oncheckedchanged">f(st_iC==true)
+{
+  json(sss.tojson,"set","everyword",true)
+  json(sss.tojson,"json",jso)
+  fw("$todo/todolist.json",jso)
+}
+else
+{
+  json(sss.tojson,"set","everyword",false)
+  json(sss.tojson,"json",jso)
+  fw("$todo/todolist.json",jso)
+}</eventItme></event>
+</View>
+<View id="45" did="34" type="LinearLayout">
+<ppt>width=-1
+height=1dp
+orientation=vertical
+layout_marginLeft=20dp
+layout_marginRight=20dp
+BackgroundColor=#F5F5F5</ppt>
+<event></event>
+</View>
+<View id="25" did="34" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=center_vertical
+layout_weight=1</ppt>
+<event><eventItme type="clicki">fn lang.code("tit1")
 s tit=sss.vtext
 fn lang.code("v3")
 s ch1=sss.vtext
@@ -158,7 +262,8 @@ utw("@img/translate.png",tit,"语言列表.iyu",ch1,ch2,false,v)
 {
   gvs(v,2,vs)
   ug(vs,"text",g)
-  fe("@langages/"+g+".lang",uvs)
+  ss(g+".ule3",gvn)
+  fe("@langages/"+gvn,uvs)
   f(uvs==true)
   {
     fw("$todo/lang",g)
@@ -178,32 +283,27 @@ else
 <View id="26" did="25" type="TextView">
 <ppt>width=-2
 height=-2
-text=语言
+text=语言设置
 textColor=#333333
-textSize=14sp
-layout_marginLeft=20dp
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
-textStyle=bold
-clickable=false</ppt>
+textSize=15sp
+layout_marginLeft=20dp</ppt>
 <event></event>
 </View>
-<View id="7" did="4" type="CardView">
+<View id="43" did="34" type="LinearLayout">
 <ppt>width=-1
-height=55dp
-app_CardcornerRadius=10dp
-app_CardElevation=0dp
-layout_marginBottom=10dp
+height=1dp
+orientation=vertical
 layout_marginLeft=20dp
-layout_marginRight=20dp</ppt>
+layout_marginRight=20dp
+BackgroundColor=#F5F5F5</ppt>
 <event></event>
 </View>
-<View id="8" did="7" type="LinearLayout">
+<View id="8" did="34" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=horizontal
 gravity=center_vertical
-BackgroundRipple=#F5F5F5
-background=white</ppt>
+layout_weight=1</ppt>
 <event><eventItme type="clicki">hws("https://www.tasaed.top")</eventItme></event>
 </View>
 <View id="13" did="8" type="ImageView">
@@ -217,36 +317,28 @@ clickable=false</ppt>
 <View id="9" did="8" type="TextView">
 <ppt>width=-2
 height=-2
-text=TASA-Ed工作室制作
+text=TASA-Ed Studio 开发
 textColor=#333333
-textSize=14sp
-layout_marginLeft=15dp
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
-textStyle=bold
-clickable=false</ppt>
+textSize=15sp
+layout_marginLeft=15dp</ppt>
 <event></event>
 </View>
-<View id="14" did="4" type="CardView">
+<View id="44" did="34" type="LinearLayout">
 <ppt>width=-1
-height=55dp
-app_CardcornerRadius=10dp
-app_CardElevation=0dp
-layout_marginBottom=10dp
+height=1dp
+orientation=vertical
 layout_marginLeft=20dp
-layout_marginRight=20dp</ppt>
+layout_marginRight=20dp
+BackgroundColor=#F5F5F5</ppt>
 <event></event>
 </View>
-<View id="15" did="14" type="LinearLayout">
+<View id="15" did="34" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=horizontal
 gravity=center_vertical
-BackgroundRipple=#F5F5F5
-background=white</ppt>
-<event><eventItme type="clicki">fn v7list.copying()
-//开源许可证
-
-hws("https://github.com/TASA-Ed/iamiplan")</eventItme></event>
+layout_weight=1</ppt>
+<event><eventItme type="clicki">hws("https://github.com/TASA-Ed/iamiplan")</eventItme></event>
 </View>
 <View id="16" did="15" type="ImageView">
 <ppt>width=40dp
@@ -261,11 +353,8 @@ clickable=false</ppt>
 height=-2
 text=TASA-Ed/iamiplan
 textColor=#333333
-textSize=14sp
-layout_marginLeft=10dp
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
-textStyle=bold
-clickable=false</ppt>
+textSize=15sp
+layout_marginLeft=10dp</ppt>
 <event></event>
 </View>
 <UIEventset></UIEventset>

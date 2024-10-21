@@ -12,9 +12,9 @@ gravity=center</ppt>
 <event></event>
 </View>
 <View id="2" did="1" type="ImageView">
-<ppt>width=75dp
-height=75dp
-src=@icon_iapp.png</ppt>
+<ppt>width=70dp
+height=70dp
+src=@icon_app.png</ppt>
 <event></event>
 </View>
 <View id="3" did="1" type="TextView">
@@ -22,12 +22,12 @@ src=@icon_iapp.png</ppt>
 height=-2
 text=Mi计划
 textColor=#C0C0C0
-textSize=13sp
+textSize=14sp
 layout_marginTop=10dp
 layout_marginBottom=40dp
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
-layout_marginLeft=15dp
-layout_marginRight=15dp</ppt>
+textStyle=bold
+layout_marginLeft=50dp
+layout_marginRight=50dp</ppt>
 <event></event>
 </View>
 <View id="5" did="4" type="LinearLayout">
@@ -41,7 +41,7 @@ ut_alignBottom=1</ppt>
 <View id="6" did="5" type="TextView">
 <ppt>width=-2
 height=-2
-text=Copyright © 2020-2024 TASA-Ed工作室
+text=Copyright © 2020-2024 TASA-Ed Studio
 textColor=#C0C0C0
 textSize=10sp
 layout_marginBottom=5dp</ppt>
@@ -49,18 +49,28 @@ layout_marginBottom=5dp</ppt>
 </View>
 <UIEventset><eventItme type="loading">fn v7list.copying()
 //开源许可证 Open source license
-sss jsver=1.2
+sss jsver=1.3
 //设置文件版本
+sss sfver="0.3.1"
+//设置软件版本
 uycl("#ffffffff",true)
 //改变状态栏
 fr("$todo/lang",lna)
 f(lna==null)
 {
-  fw("$todo/lang","zh_CN")
+  java(syla,null,"java.util.Locale.getDefault")
+  //获取系统语言
+  f(syla=="zh_CN")
+  {
+    fw("$todo/lang","zh_CN")
+  }
+  else
+  {
+    fw("$todo/lang","en_US")
+  }
   fr("$todo/lang",lna)
 }
-fr("@langages/"+lna+".lang",lang)
-sl(lang,"\n",sss.language)
+fr("@langages/"+lna+".ule3",sss.language)
 fn lang.age("mian")
 //语言初始化
 fr("@files/value.prop",sss.value)
@@ -80,32 +90,41 @@ f(fe2==false)
   s cont=sss.vals
   sr(uuid1,"v#:^name^;",name,uuid1)
   sr(uuid1,"v#:#content#;",cont,uuid1)
+  //读取值文件替换并写入
+  time(1,tix)
+  sr(uuid1,"v#:#ct#;",tix,uuid1)
+  sr(uuid1,"v#:^st^;",tix,uuid1)
+  //读取时间
   fw("$todo/uuid1.json",uuid1)
-  //读取值文件替换并写入示例
   us(3,"text","感谢您选择了本软件，欢迎使用")
-  //ftz("通知","申请","通知，权限",null)
-  //{
-  //}
 }
 //判断是否为第一次进入软件
 else
 {
-  t()
+  fr("$todo/todolist.json",todolist)
+  //读取列表文件
+  json(todolist,ewv)
+  json(ewv,"get","everyword",everyword)
+  f(everyword==true)
   {
-    call(mryy,"mjava","http.get","https://api.tasaed.top/rw")
-    syso(mryy)
-    ufnsui()
+    t()
     {
-      f(mryy==null)
+      call(mryy,"mjava","http.get","https://api.tasaed.top/rw")
+      syso(mryy)
+      ufnsui()
       {
-      }
-      else
-      {
-        us(3,"text",mryy)
+        f(mryy==null)
+        {
+        }
+        else
+        {
+          us(3,"text",mryy)
+        }
       }
     }
+    //获取每日一言
   }
-  //获取每日一言
+  
 }
 fr("$todo/todolist.json",todolist)
 //读取列表文件
@@ -148,10 +167,7 @@ f(jsv&gt;0.01)
   }
 }
 //json版本升级
-/.</eventItme><eventItme type="loadingComplete">fn v7list.copying()
-//开源许可证 Open source license
-
-json(sss.tojson,"get","nowait",hui)
+/.</eventItme><eventItme type="loadingComplete">json(sss.tojson,"get","nowait",hui)
 f(hui==false)
 {
   t()

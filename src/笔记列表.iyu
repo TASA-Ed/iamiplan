@@ -1,0 +1,80 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+layout_marginBottom=10dp</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="CardView">
+<ppt>width=-1
+height=-2
+app_CardcornerRadius=5dp
+app_CardElevation=0dp</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+BackgroundRipple=#C0C0C0
+padding=15dp</ppt>
+<event><eventItme type="clicki">ulag(st_vW,-2,sss.vuuid)
+fr("$todo/uuid"+sss.vuuid+".json",uidc)
+json(uidc,uujs)
+json(uujs,"get","name",sss.vname)
+json(uujs,"get","content",sss.vcont)
+//读取数据
+sss vmakenew=false
+//非创建新文件
+uigo("编辑笔记.iyu")
+//跳转到编辑</eventItme><eventItme type="press">ulag(st_vW,-2,uids)
+//syso(uids)
+fn lang.code("v1")
+s tit=sss.vtext
+fn lang.code("v2")
+s con=sss.vtext
+fn lang.code("v3")
+s ch1=sss.vtext
+fn lang.code("v4")
+s ch2=sss.vtext
+
+utw("@img/alert-outline.png",tit,con,ch1,ch2,false,v)
+{
+  fd("$todo/uuid"+uids+".json",ls)
+  //删除源文件
+  json(sss.tojson,"get","idlist",idl)
+  //syso(idl)
+  sr(idl,"\,"+uids+"\,","\,",idl)
+  json(sss.tojson,"set","idlist",idl)
+  //删除ID并写入
+  json(sss.tojson,"json",jso)
+  fw("$todo/todolist.json",jso)
+  //最终写入文件
+  fn v7list.reload()
+  uls(笔记.5,sss.db,"笔记列表.iyu",-1,-2)
+  //重载列表
+  //uigo("主界面.iyu")
+  //end()
+}
+else
+{
+}</eventItme></event>
+</View>
+<View id="10" did="3" type="TextView">
+<ppt>width=-2
+height=-2
+text=示例：我的第一项笔记
+textColor=#ff000000
+textSize=15sp
+textStyle=bold</ppt>
+<event></event>
+</View>
+<View id="11" did="3" type="TextView">
+<ppt>width=-2
+height=-2
+text=2024/10/27 15:45:36
+textColor=#696969
+textSize=12sp</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

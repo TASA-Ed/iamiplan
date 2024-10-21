@@ -1,5 +1,7 @@
 fn age(uiid)
-for(data;sss.language)
+sj(sss.language,"&lt;"+uiid+"&gt;","&lt;/"+uiid+"&gt;",ghila)
+sl(ghila,"\n",lang)
+for(data;lang)
 {
   sj(data,"[","]",dct)
   sl(dct,".",dl)
@@ -14,7 +16,9 @@ for(data;sss.language)
 }
 end fn
 fn chdh(uiid)
-for(data;sss.language)
+sj(sss.language,"&lt;"+uiid+"&gt;","&lt;/"+uiid+"&gt;",ghila)
+sl(ghila,"\n",lang)
+for(data;lang)
 {
   sj(data,"[","]",dct)
   sl(dct,".",dl)
@@ -29,7 +33,9 @@ for(data;sss.language)
 }
 end fn
 fn code(codeid)
-for(data;sss.language)
+sj(sss.language,"&lt;code&gt;","&lt;/code&gt;",ghila)
+sl(ghila,"\n",lang)
+for(data;lang)
 {
   sj(data,"[","]",dct)
   sl(dct,".",dl)

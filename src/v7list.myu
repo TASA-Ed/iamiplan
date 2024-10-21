@@ -16,18 +16,10 @@ for(uid;idsl)
     json(uidc,uujs)
     json(uujs,"get","content",cont)
     json(uujs,"get","name",name)
-    json(uujs,"get","checkbox",checkbox)
+    json(uujs,"get","settime",st)
+    json(uujs,"get","createtime",ct)
     //读取数据
-    f(checkbox==true)
-    {
-      s check="@img/checkbox-marked-outline.png"
-    }
-    else
-    {
-      s check="@img/checkbox-blank-outline.png"
-    }
-    //更换图标
-    ula(sss.db,待办.5="待办事项",10=name,11=cont,6=check,-1=checkbox,-2=uid)
+    ula(sss.db,笔记.5="笔记列表",10=name,11=st,-1=ct,-2=uid)
   }
   
 }
@@ -68,7 +60,7 @@ sran(1,9999,va5)
 ss(va1+va2+va3,vasg)
 ss(va4+va5,vahg)
 s+(vasg,vahg)
-sss urid32=vahg
+sss urid=vahg
 end fn
 
 fn copying()

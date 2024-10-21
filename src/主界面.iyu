@@ -7,25 +7,26 @@ height=-1</ppt>
 <ppt>width=-1
 height=-1
 ut_above=3</ppt>
-<event><eventItme type="onpageselected">f(st_pN==0)
+<event><eventItme type="onpageselected">ug(2,"currentitem",hd)
+f(hd==0)
 {
   dht(dh, 0, 0, -25, 0)
   dh(dh, "duration", 250)
-  us(6, "dh", dh)
+  us(16, "dh", dh)
   us(10,"visibility","visible")
 }
-else f(st_pN==1)
+else f(hd==1)
 {
   dht(dh, 0, 0, -25, 0)
   dh(dh, "duration", 250)
-  us(8, "dh", dh)
+  us(17, "dh", dh)
   us(10,"visibility","visible")
 }
-else
+else f(hd==2)
 {
   dht(dh, 0, 0, -25, 0)
   dh(dh, "duration", 250)
-  us(15, "dh", dh)
+  us(18, "dh", dh)
   us(10,"visibility","gone")
 }</eventItme></event>
 </View>
@@ -53,12 +54,15 @@ gravity=center</ppt>
 <event><eventItme type="clicki">us(2,"currentitem",0)
 dht(dh, 0, 0, -25, 0)
 dh(dh, "duration", 250)
-us(6, "dh", dh)</eventItme></event>
+us(16, "dh", dh)</eventItme></event>
 </View>
-<View id="6" did="4" type="ImageView">
-<ppt>width=25dp
-height=25dp
-src=@img/IconParkSolidPlan.png</ppt>
+<View id="16" did="4" type="TextView">
+<ppt>width=-2
+height=-2
+text=笔记
+textColor=#ff000000
+textSize=15sp
+textStyle=bold</ppt>
 <event></event>
 </View>
 <View id="5" did="3" type="LinearLayout">
@@ -70,12 +74,15 @@ gravity=center</ppt>
 <event><eventItme type="clicki">us(2,"currentitem",1)
 dht(dh, 0, 0, -25, 0)
 dh(dh, "duration", 250)
-us(8, "dh", dh)</eventItme></event>
+us(17, "dh", dh)</eventItme></event>
 </View>
-<View id="8" did="5" type="ImageView">
-<ppt>width=27.5dp
-height=27.5dp
-src=@img/SolarNotesBoldDuotone.png</ppt>
+<View id="17" did="5" type="TextView">
+<ppt>width=-2
+height=-2
+text=记账
+textColor=#ff000000
+textSize=15sp
+textStyle=bold</ppt>
 <event></event>
 </View>
 <View id="14" did="3" type="LinearLayout">
@@ -87,12 +94,15 @@ gravity=center</ppt>
 <event><eventItme type="clicki">us(2,"currentitem",2)
 dht(dh, 0, 0, -25, 0)
 dh(dh, "duration", 250)
-us(15, "dh", dh)</eventItme></event>
+us(18, "dh", dh)</eventItme></event>
 </View>
-<View id="15" did="14" type="ImageView">
-<ppt>width=35dp
-height=35dp
-src=@img/MaterialSymbolsMoreHoriz.png</ppt>
+<View id="18" did="14" type="TextView">
+<ppt>width=-2
+height=-2
+text=关于
+textColor=#ff000000
+textSize=15sp
+textStyle=bold</ppt>
 <event></event>
 </View>
 <View id="10" did="1" type="LinearLayout">
@@ -100,14 +110,15 @@ src=@img/MaterialSymbolsMoreHoriz.png</ppt>
 height=-2
 orientation=vertical
 ut_above=9
-gravity=right</ppt>
+gravity=right
+visibility=visible</ppt>
 <event></event>
 </View>
 <View id="11" did="10" type="CardView">
-<ppt>width=60dp
-height=60dp
+<ppt>width=55dp
+height=55dp
 app_CardcornerRadius=114514dp
-app_CardElevation=0dp
+app_CardElevation=0.5dp
 layout_marginRight=25dp
 layout_marginBottom=45dp
 layout_marginTop=10dp</ppt>
@@ -120,13 +131,13 @@ orientation=vertical
 gravity=center
 BackgroundColor=#AFEEEE
 BackgroundRipple=#ffffffff</ppt>
-<event><eventItme type="clicki">ug(2,"currentitem",hdct)
-f(hdct==0)
+<event><eventItme type="clicki">ug(2,"currentitem",hd)
+f(hd==0)
 {
-  uigo("待办编辑.iyu")
+  uigo("编辑笔记.iyu")
   sss vmakenew=true
 }
-else f(hdct==1)
+else f(hd==1)
 {
   fn lang.code("tw1")
   tw(sss.vtext)
@@ -139,25 +150,31 @@ height=40dp
 src=@img/MaterialSymbolsAdd.png</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">fn v7list.copying()
-//开源许可证 Open source license
-
-uycl("#F5F5F5",true)
+<UIEventset><eventItme type="loading">uycl("#F5F5F5",true,0)
 //改变状态栏
 
-addv(2,"待办.iyu|记账.iyu|关于.iyu",hdct)
-//初始化滑动窗体</eventItme><eventItme type="loadingComplete">fn v7list.reload()
+addv(2,"笔记.iyu|记账.iyu|关于.iyu",hdct)
+//初始化滑动窗体
+
+fn lang.age("ma")
+//读取语言文件
+
+fn v7list.copying()
+//开源许可证 Open source license</eventItme><eventItme type="loadingComplete">fn v7list.reload()
 //模块载入列表
-uls(待办.5,sss.db,"待办事项.iyu",-1,-2)
+uls(笔记.5,sss.db,"笔记列表.iyu",-1,-2)
 //加载列表
 json(sss.tojson,"get","nowait",nw)
 us(关于.23,"checked",nw)
+json(sss.tojson,"get","everyword",ew)
+us(关于.53,"checked",ew)
+us(关于.40,"text",sss.sfver)
 
-fn lang.chdh("待办")
+fn lang.chdh("笔记")
 fn lang.chdh("记账")
-fn lang.chdh("关于")</eventItme><eventItme type="restart">fn v7list.copying()
-//开源许可证 Open source license
+fn lang.chdh("关于")</eventItme><eventItme type="restart">fn v7list.reload()
+uls(笔记.5,sss.db,"笔记列表.iyu",-1,-2)
+//重新加载
 
-fn v7list.reload()
-uls(待办.5,sss.db,"待办事项.iyu",-1,-2)
-//重新加载</eventItme></UIEventset>
+fn v7list.copying()
+//开源许可证 Open source license</eventItme></UIEventset>

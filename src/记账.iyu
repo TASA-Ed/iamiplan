@@ -19,7 +19,6 @@ text=记账
 textColor=#2F4F4F
 textSize=25sp
 layout_marginLeft=25dp
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
 textStyle=bold
 layout_marginTop=10dp</ppt>
 <event></event>

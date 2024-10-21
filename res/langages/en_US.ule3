@@ -1,27 +1,42 @@
-# lang v2.0
+<?User-interface-LanguagE-files-v3.0>
 # A # at the beginning indicates a comment
+<mian>
 [mian.3.text]=Mi Plan
 [mian.6.text]=Copyright © 2020-2024 TASA-Ed Studio
-
-[待办.3.text]=To-do
+</mian>
+<笔记>
+[笔记.3.text]=Notes
+[笔记.3.text]=Notes
+</笔记>
+<记账>
 [记账.3.text]=Accounting
-
-[edit.16.hint]=To-do title
-[edit.19.hint]=To-do content
+[记账.3.text]=Accounting
+</记账>
+<ma>
+[ma.16.text]=Notes
+[ma.17.text]=Accounting
+[ma.18.text]=About
+</ma>
+<edit>
+[edit.16.hint]=Notes title
+[edit.19.hint]=Notes content
 [edit.12.text]=Save
 [edit.25.text]=Scheduled reminders
 [edit.42.text]=We will be in
 [edit.44.text]=Minutes
 [edit.45.text]=After reminding you
-
+</edit>
+<关于>
 [关于.18.text]=Mi Plan
-[关于.9.text]=TASA-Ed Studio Productions
+[关于.9.text]=TASA-Ed Studio Exploitation
 [关于.22.text]=No waiting at startup
 [关于.29.text]=About
-[关于.26.text]=Langage
-
+[关于.26.text]=Language settings
+[关于.50.text]=Word of the day
+</关于>
+<code>
 [code.v1.utw]=Warns
-[code.v2.utw]=Are you deleting this to-do?
+[code.v2.utw]=Are you deleting this note?
 [code.v3.utw]=Yes
 [code.v4.utw]=No
 [code.tw1.tw]=Not yet available, stay tuned!
@@ -35,3 +50,4 @@
 [code.editw1.tw]=Content and title must not be empty
 [code.upjsvtit.utw]=Upgrade the JSON version
 [code.upjsv1.tw]=Do you want to upgrade the JSON version? If you do not upgrade, you will not be able to use the software.
+</code>

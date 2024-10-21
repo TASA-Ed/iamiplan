@@ -15,11 +15,10 @@ gravity=center_vertical</ppt>
 <View id="3" did="2" type="TextView">
 <ppt>width=-2
 height=-2
-text=待办
+text=笔记
 textColor=#2F4F4F
 textSize=25sp
 layout_marginLeft=25dp
-typeface=@fonts/SOURCEHANSANSCN-REGULAR.OTF
 textStyle=bold
 layout_margintop=5dp</ppt>
 <event></event>
@@ -34,7 +33,8 @@ height=-1</ppt>
 height=-1
 layout_marginLeft=25dp
 layout_marginRight=25dp
-layout_marginTop=7.5dp</ppt>
+layout_marginTop=7.5dp
+layout_marginBottom=60dp</ppt>
 <event></event>
 </View>
 <UIEventset></UIEventset>
