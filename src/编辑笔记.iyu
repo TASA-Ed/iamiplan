@@ -98,7 +98,7 @@ f(sss.vmakenew==true)
   sr(ujs,"v#:^st^;",tix,ujs)
   //替换时间
   json(sss.tojson,"get","idlist",id)
-  fn v7list.uuidfor32()
+  fn v7list.uuid()
   //随机生成一个UUID
   fw("$todo/uuid"+sss.urid+".json",ujs)
   //获取UUID
