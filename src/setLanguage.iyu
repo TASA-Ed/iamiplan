@@ -1,0 +1,77 @@
+<View id="28" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="1" did="28" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+background=white</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=60dp
+orientation=horizontal</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="7" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=left</ppt>
+<event></event>
+</View>
+<View id="30" did="7" type="LinearLayout">
+<ppt>width=-2
+height=-2
+orientation=vertical
+gravity=center
+layout_marginLeft=12.5dp
+background=selectableitemborderless</ppt>
+<event><eventItme type="clicki">end()</eventItme></event>
+</View>
+<View id="31" did="30" type="ImageView">
+<ppt>width=20dp
+height=20dp
+src=@img/TopcoatBack.png
+layout_margin=7.5dp</ppt>
+<event></event>
+</View>
+<View id="14" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+BackgroundColor=#F5F5F5</ppt>
+<event></event>
+</View>
+<View id="32" did="14" type="RecyclerView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">uycl("#ffffffff",true)
+java(cs,activity,"android.app.Activity.getWindow")
+java(cs2,cs,"android.view.Window.getDecorView")
+java(null,cs2,"android.view.View.setSystemUiVisibility","int","8192")
+// 获取语言列表
+fr("@languages/lang.list", langList)
+sl(langList,";",list)
+fn lang.code("author")
+ula(list,"clear")
+// 加载列表
+for(langsName; list)
+{
+    fn lang.readInfo(langsName)
+	ula(list,-1=langsName,7=sss.langName,10=sss.vtext+sss.langAuthor)
+}
+uls(32,list,"语言列表.iyu","-1")</eventItme></UIEventset>

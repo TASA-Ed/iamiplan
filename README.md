@@ -8,13 +8,13 @@ A program software.
 
 系统：Android 5.0及以上
 
-软件：[iApp 3.0.1027](http://v.dayx.cn:93/iappce.htm)及以上
+软件：[iApp 3.0.1035](http://v.dayx.cn:93/iappce.htm)及以上
 
 This software is built using [iApp](http://v.dayx.cn:93)
 
 System: Android 5.0 and above
 
-Software: [iApp 3.0.1027](http://v.dayx.cn:93/iappce.htm) and above
+Software: [iApp 3.0.1035](http://v.dayx.cn:93/iappce.htm) and above
 
 ---
 

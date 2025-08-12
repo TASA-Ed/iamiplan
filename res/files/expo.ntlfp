@@ -1,3 +1,20 @@
-:<TASA-Ed-Notes-Lists-Files-for-Plan-1-2>
+<?TASA-Ed-Notes-Lists-Files-for-Plan-v1.0>
+[sf.version]=v#:^ver^;
+[sf.author]=v#:^author^;
+[sf.encrypt]=v#:#encrypt#;
+</?>
+<name>
+v#:^name^;
+</name>
 
-Unknow
+<content>
+v#:#content#;
+</content>
+
+<createtime>
+v#:#ct#;
+</createtime>
+
+<settime>
+v#:^st^;
+</settime>

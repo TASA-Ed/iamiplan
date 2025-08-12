@@ -2,14 +2,7 @@
 <ppt>width=-2
 height=-2
 text=按钮1</ppt>
-<event><eventItme type="clicki">fn lang.code("v1")
-syso(sss.vtext)</eventItme></event>
+<event><eventItme type="clicki">fn lang.readInfo("en_US")
+syso(sss.langAuthor)</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">fr("$todo/lang",lna)
-f(lna==null)
-{
-  fw("$todo/lang","zh_CN")
-  fr("$todo/lang",lna)
-}
-fr("@langages/"+lna+".ule3",sss.language)
-fn lang.age("mian")</eventItme></UIEventset>
+<UIEventset></UIEventset>

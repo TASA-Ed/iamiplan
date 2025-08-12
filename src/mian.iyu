@@ -11,21 +11,35 @@ background=white
 gravity=center</ppt>
 <event></event>
 </View>
-<View id="2" did="1" type="ImageView">
+<View id="7" did="1" type="LinearLayout">
+<ppt>width=-2
+height=500dp
+orientation=vertical
+gravity=center_horizontal</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="LinearLayout">
+<ppt>width=-2
+height=70dp
+orientation=vertical
+layout_marginTop=150dp</ppt>
+<event></event>
+</View>
+<View id="2" did="8" type="ImageView">
 <ppt>width=70dp
 height=70dp
 src=@icon_app.png</ppt>
 <event></event>
 </View>
-<View id="3" did="1" type="TextView">
+<View id="3" did="7" type="TextView">
 <ppt>width=-2
 height=-2
 text=Mi计划
 textColor=#C0C0C0
 textSize=14sp
-layout_marginTop=10dp
-layout_marginBottom=40dp
 textStyle=bold
+gravity=center
+layout_marginTop=7.5dp
 layout_marginLeft=50dp
 layout_marginRight=50dp</ppt>
 <event></event>
@@ -41,7 +55,7 @@ ut_alignBottom=1</ppt>
 <View id="6" did="5" type="TextView">
 <ppt>width=-2
 height=-2
-text=Copyright © 2020-2024 TASA-Ed Studio
+text=Copyright © 2020-2025 TASA-Ed Studio
 textColor=#C0C0C0
 textSize=10sp
 layout_marginBottom=5dp</ppt>
@@ -51,26 +65,17 @@ layout_marginBottom=5dp</ppt>
 //开源许可证 Open source license
 sss jsver=1.3
 //设置文件版本
-sss sfver="0.3.1"
+sss sfver="0.3.2"
 //设置软件版本
 uycl("#ffffffff",true)
 //改变状态栏
 fr("$todo/lang",lna)
 f(lna==null)
 {
-  java(syla,null,"java.util.Locale.getDefault")
-  //获取系统语言
-  f(syla=="zh_CN")
-  {
-    fw("$todo/lang","zh_CN")
-  }
-  else
-  {
-    fw("$todo/lang","en_US")
-  }
+  fw("$todo/lang","zh_CN")
   fr("$todo/lang",lna)
 }
-fr("@langages/"+lna+".ule3",sss.language)
+fr("@languages/"+lna+".ule3",sss.language)
 fn lang.age("mian")
 //语言初始化
 fr("@files/value.prop",sss.value)
@@ -109,11 +114,17 @@ else
   {
     t()
     {
-      call(mryy,"mjava","http.get","https://api.tasaed.top/rw")
+  	javags(b_model,null,"android.os.Build","MODEL")
+  	javags(b_release,null,"android.os.Build$VERSION","RELEASE")
+  	ss("iamiplan/"+sss.sfver+" (Linux; Android "+b_release+"; "+b_model+")",ua)
+  	call(mryy,"mjava","http.httpget","https://api.tasaed.top/rw",ua)
       syso(mryy)
       ufnsui()
       {
         f(mryy==null)
+        {
+        }
+        else f(mryy=="")
         {
         }
         else
@@ -172,7 +183,7 @@ f(hui==false)
 {
   t()
   {
-    stop(1500)
+    stop(1600)
     ufnsui()
     {
       uigo("主界面.iyu")

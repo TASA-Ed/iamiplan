@@ -2,84 +2,68 @@
 //此代码属于搬运
 import java.io.*;
 import java.net.*;
+import java.lang.*;
 
-//get
-private static String get(String urlstr)
+private static String httpget(String urlstr,String uag)
 {
-  
-  StringBuilder getResponse = new StringBuilder();
-  HttpURLConnection connection =null;
-  BufferedReader reader = null;
-  try{
-    URL url = new URL(urlstr);
-    connection = (HttpURLConnection) url.openConnection();
-    connection.setRequestMethod("GET");
-    connection.setConnectTimeout(8000);
-    connection.setReadTimeout(8000);
-    InputStream inputStream = connection.getInputStream();
-    //对获取到的输入流进行读取
-    reader = new BufferedReader(new InputStreamReader(inputStream));
-    String line;
-    while((line=reader.readLine())!=null){
-      getResponse.append(line+"\n");
-    }
-  }
-  catch(Exception e){
-    
-  }
-  finally
-  {
-    if(reader!=null){
-      try{
-        reader.close();
-      }
-      catch(IOException e){}
-    }
-    if(connection!=null){
-      connection.disconnect();
-    }
-  }
-  return getResponse.toString();
-}
-
-
-//post
-private static String post(String urlstr,String data)
-{
-  
-  StringBuilder postResponse = new StringBuilder();
-  HttpURLConnection connection =null;
-  BufferedReader reader = null;
-  try{
-    URL url = new URL(urlstr);
-    connection = (HttpURLConnection) url.openConnection();
-    connection.setRequestMethod("POST");
-    connection.setConnectTimeout(8000);
-    connection.setReadTimeout(8000);
-    DataOutputStream dos = new DataOutputStream(connection.getOutputStream());
-    dos.writeBytes(data);
-    InputStream inputStream = connection.getInputStream();
-    //对获取到的输入流进行读取
-    reader = new BufferedReader(new InputStreamReader(inputStream));
-    String line;
-    while((line=reader.readLine())!=null){
-      postResponse.append(line+"\n");
-    }
-  }
-  catch(Exception e){
-    
-  }
-  finally
-  {
-    if(reader!=null){
-      try{
-        reader.close();
-      }
-      catch(IOException e){}
-    }
-    if(connection!=null){
-      connection.disconnect();
-    }
-  }
-  return postResponse.toString();
+	try {
+		URL url = new URL(urlstr);
+		
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		connection.setRequestMethod("GET");
+		
+		// 设置请求头
+		connection.setRequestProperty("User-Agent",uag);
+		connection.setInstanceFollowRedirects(true);
+		
+		// 检查响应码
+		int responseCode = connection.getResponseCode();
+		i.syso("Response Code: " + responseCode);
+		
+		if (responseCode == HttpURLConnection.HTTP_MOVED_PERM ||
+		responseCode == HttpURLConnection.HTTP_MOVED_TEMP) {
+			String newUrl = connection.getHeaderField("Location");
+			i.syso("Redirecting to: " + newUrl);
+			if(connection!=null){
+				connection.disconnect();
+			}
+			return httpget(newUrl, uag); // 递归处理新URL
+		}
+		
+		// 读取响应
+		if (responseCode >= 200 && responseCode < 300) { // 200
+			BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			String inputLine;
+			StringBuilder response = new StringBuilder();
+			
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+			
+			return response.toString();
+			if(connection!=null){
+				connection.disconnect();
+			}
+		} else {
+			BufferedReader in = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
+			String inputLine;
+			StringBuilder response = new StringBuilder();
+			
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+			
+			return response.toString();
+			if(connection!=null){
+				connection.disconnect();
+			}
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+		if(connection!=null){
+			connection.disconnect();
+		}
+	}
 }

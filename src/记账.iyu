@@ -8,7 +8,7 @@ BackgroundColor=#F5F5F5</ppt>
 <View id="2" did="1" type="LinearLayout">
 <ppt>width=-1
 height=100dp
-orientation=vertical
+orientation=horizontal
 gravity=center_vertical</ppt>
 <event></event>
 </View>
@@ -20,7 +20,32 @@ textColor=#2F4F4F
 textSize=25sp
 layout_marginLeft=25dp
 textStyle=bold
-layout_marginTop=10dp</ppt>
+layout_margintop=5dp</ppt>
+<event></event>
+</View>
+<View id="7" did="1" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="5" did="7" type="RecyclerView">
+<ppt>width=-1
+height=-1
+layout_marginLeft=25dp
+layout_marginRight=25dp
+layout_marginTop=7.5dp
+layout_marginBottom=60dp</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="TextView">
+<ppt>width=-2
+height=-2
+text=敬请期待~
+textStyle=bold
+textColor=#ff000000
+textSize=20sp
+ut_centerHorizontal=true
+layout_marginTop=20dp</ppt>
 <event></event>
 </View>
 <UIEventset></UIEventset>

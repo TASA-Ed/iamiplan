@@ -10,29 +10,29 @@ ut_above=3</ppt>
 <event><eventItme type="onpageselected">ug(2,"currentitem",hd)
 f(hd==0)
 {
-  dht(dh, 0, 0, -25, 0)
-  dh(dh, "duration", 250)
-  us(16, "dh", dh)
-  us(10,"visibility","visible")
+	us(10,"visibility","visible")
+	us(19,"src","@img/26ce4ba2c22.png")
+    us(20,"src","@img/cafda67f30a.png")
+    us(21,"src","@img/363b1f2883e.png")
 }
 else f(hd==1)
 {
-  dht(dh, 0, 0, -25, 0)
-  dh(dh, "duration", 250)
-  us(17, "dh", dh)
-  us(10,"visibility","visible")
+	us(10,"visibility","visible")
+	us(19,"src","@img/cda6e4195cc.png")
+    us(20,"src","@img/274a50db3ef.png")
+    us(21,"src","@img/363b1f2883e.png")
 }
 else f(hd==2)
 {
-  dht(dh, 0, 0, -25, 0)
-  dh(dh, "duration", 250)
-  us(18, "dh", dh)
-  us(10,"visibility","gone")
+	us(10,"visibility","gone")
+	us(19,"src","@img/cda6e4195cc.png")
+    us(20,"src","@img/cafda67f30a.png")
+    us(21,"src","@img/6193131b7a7.png")
 }</eventItme></event>
 </View>
 <View id="9" did="1" type="CardView">
 <ppt>width=-1
-height=60dp
+height=65dp
 ut_alignParentBottom=true
 app_CardElevation=1dp
 app_CardcornerRadius=0dp</ppt>
@@ -42,7 +42,7 @@ app_CardcornerRadius=0dp</ppt>
 <ppt>width=-1
 height=-1
 orientation=horizontal
-background=white</ppt>
+BackgroundColor=#ffffffff</ppt>
 <event></event>
 </View>
 <View id="4" did="3" type="LinearLayout">
@@ -50,19 +50,23 @@ background=white</ppt>
 height=-1
 orientation=vertical
 layout_weight=1
-gravity=center</ppt>
-<event><eventItme type="clicki">us(2,"currentitem",0)
-dht(dh, 0, 0, -25, 0)
-dh(dh, "duration", 250)
-us(16, "dh", dh)</eventItme></event>
+gravity=center
+background=selectableitemborderless</ppt>
+<event><eventItme type="clicki">us(2,"currentitem",0)</eventItme></event>
+</View>
+<View id="19" did="4" type="ImageView">
+<ppt>width=30dp
+height=30dp
+src=@img/26ce4ba2c22.png</ppt>
+<event></event>
 </View>
 <View id="16" did="4" type="TextView">
 <ppt>width=-2
 height=-2
 text=笔记
 textColor=#ff000000
-textSize=15sp
-textStyle=bold</ppt>
+textSize=12sp
+layout_marginTop=3dp</ppt>
 <event></event>
 </View>
 <View id="5" did="3" type="LinearLayout">
@@ -70,19 +74,23 @@ textStyle=bold</ppt>
 height=-1
 orientation=vertical
 layout_weight=1
-gravity=center</ppt>
-<event><eventItme type="clicki">us(2,"currentitem",1)
-dht(dh, 0, 0, -25, 0)
-dh(dh, "duration", 250)
-us(17, "dh", dh)</eventItme></event>
+gravity=center
+background=selectableitemborderless</ppt>
+<event><eventItme type="clicki">us(2,"currentitem",1)</eventItme></event>
+</View>
+<View id="20" did="5" type="ImageView">
+<ppt>width=31.5dp
+height=31.5dp
+src=@img/cafda67f30a.png</ppt>
+<event></event>
 </View>
 <View id="17" did="5" type="TextView">
 <ppt>width=-2
 height=-2
 text=记账
 textColor=#ff000000
-textSize=15sp
-textStyle=bold</ppt>
+textSize=12sp
+layout_marginTop=3dp</ppt>
 <event></event>
 </View>
 <View id="14" did="3" type="LinearLayout">
@@ -90,19 +98,25 @@ textStyle=bold</ppt>
 height=-1
 orientation=vertical
 layout_weight=1
-gravity=center</ppt>
-<event><eventItme type="clicki">us(2,"currentitem",2)
-dht(dh, 0, 0, -25, 0)
-dh(dh, "duration", 250)
-us(18, "dh", dh)</eventItme></event>
+gravity=center
+background=selectableitemborderless</ppt>
+<event><eventItme type="clicki">us(2,"currentitem",2)</eventItme></event>
+</View>
+<View id="21" did="14" type="ImageView">
+<ppt>width=29.5dp
+height=29.5dp
+src=@img/363b1f2883e.png
+layout_marginRight=5dp</ppt>
+<event></event>
 </View>
 <View id="18" did="14" type="TextView">
 <ppt>width=-2
 height=-2
 text=关于
 textColor=#ff000000
-textSize=15sp
-textStyle=bold</ppt>
+textSize=12sp
+layout_marginTop=3dp
+layout_marginRight=5dp</ppt>
 <event></event>
 </View>
 <View id="10" did="1" type="LinearLayout">
@@ -118,7 +132,7 @@ visibility=visible</ppt>
 <ppt>width=55dp
 height=55dp
 app_CardcornerRadius=114514dp
-app_CardElevation=0.5dp
+app_CardElevation=0.25dp
 layout_marginRight=25dp
 layout_marginBottom=45dp
 layout_marginTop=10dp</ppt>
@@ -131,7 +145,9 @@ orientation=vertical
 gravity=center
 BackgroundColor=#AFEEEE
 BackgroundRipple=#ffffffff</ppt>
-<event><eventItme type="clicki">ug(2,"currentitem",hd)
+<event><eventItme type="clicki">uzd(zdq,25)
+//震动
+ug(2,"currentitem",hd)
 f(hd==0)
 {
   uigo("编辑笔记.iyu")
@@ -151,16 +167,13 @@ src=@img/MaterialSymbolsAdd.png</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">uycl("#F5F5F5",true,0)
+java(cs,activity,"android.app.Activity.getWindow")
+java(cs2,cs,"android.view.Window.getDecorView")
+java(null,cs2,"android.view.View.setSystemUiVisibility","int","8192")
 //改变状态栏
 
 addv(2,"笔记.iyu|记账.iyu|关于.iyu",hdct)
-//初始化滑动窗体
-
-fn lang.age("ma")
-//读取语言文件
-
-fn v7list.copying()
-//开源许可证 Open source license</eventItme><eventItme type="loadingComplete">fn v7list.reload()
+//初始化滑动窗体</eventItme><eventItme type="loadingComplete">fn v7list.reload()
 //模块载入列表
 uls(笔记.5,sss.db,"笔记列表.iyu",-1,-2)
 //加载列表
@@ -170,11 +183,9 @@ json(sss.tojson,"get","everyword",ew)
 us(关于.53,"checked",ew)
 us(关于.40,"text",sss.sfver)
 
+fn lang.age("主界面")
 fn lang.chdh("笔记")
 fn lang.chdh("记账")
 fn lang.chdh("关于")</eventItme><eventItme type="restart">fn v7list.reload()
 uls(笔记.5,sss.db,"笔记列表.iyu",-1,-2)
-//重新加载
-
-fn v7list.copying()
-//开源许可证 Open source license</eventItme></UIEventset>
+//重新加载</eventItme></UIEventset>

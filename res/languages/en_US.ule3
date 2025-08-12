@@ -1,22 +1,24 @@
 <?User-interface-LanguagE-files-v3.0>
 # A # at the beginning indicates a comment
+[language.name]=English
+[language.author]=TASA-Ed Studio
+</?>
 <mian>
 [mian.3.text]=Mi Plan
-[mian.6.text]=Copyright © 2020-2024 TASA-Ed Studio
+[mian.6.text]=Copyright © 2020-2025 TASA-Ed Studio
 </mian>
+<主界面>
+[主界面.16.text]=Notes
+[主界面.17.text]=Accounting
+[主界面.18.text]=About
+</主界面>
 <笔记>
-[笔记.3.text]=Notes
 [笔记.3.text]=Notes
 </笔记>
 <记账>
 [记账.3.text]=Accounting
-[记账.3.text]=Accounting
+[记账.8.text]=Stay tuned~
 </记账>
-<ma>
-[ma.16.text]=Notes
-[ma.17.text]=Accounting
-[ma.18.text]=About
-</ma>
 <edit>
 [edit.16.hint]=Notes title
 [edit.19.hint]=Notes content
@@ -28,10 +30,10 @@
 </edit>
 <关于>
 [关于.18.text]=Mi Plan
-[关于.9.text]=TASA-Ed Studio Exploitation
+[关于.9.text]=By TASA-Ed Studio
 [关于.22.text]=No waiting at startup
 [关于.29.text]=About
-[关于.26.text]=Language settings
+[关于.26.text]=Languages
 [关于.50.text]=Word of the day
 </关于>
 <code>
@@ -42,7 +44,6 @@
 [code.tw1.tw]=Not yet available, stay tuned!
 [code.tit1.utw]=Langage
 [code.tw2.tw]=Reboot software to take effect
-[code.tw3.tw]=Language does not exist
 [code.re1.utw]=Be sure to turn on the notification permission before using it, keep the software running in the background, and avoid reminder failures.
 [code.rect1.tw]=The maximum setting is alerted after 90 minutes.
 [code.rect2a.tw]=Will be in 
@@ -50,4 +51,6 @@
 [code.editw1.tw]=Content and title must not be empty
 [code.upjsvtit.utw]=Upgrade the JSON version
 [code.upjsv1.tw]=Do you want to upgrade the JSON version? If you do not upgrade, you will not be able to use the software.
+[code.author.list]=Author: 
+[code.setlang.utw]=Do you change the language to {name} ?
 </code>

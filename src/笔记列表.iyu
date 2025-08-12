@@ -16,7 +16,7 @@ app_CardElevation=0dp</ppt>
 <ppt>width=-1
 height=-2
 orientation=vertical
-BackgroundRipple=#C0C0C0
+background=selectableitem
 padding=15dp</ppt>
 <event><eventItme type="clicki">ulag(st_vW,-2,sss.vuuid)
 fr("$todo/uuid"+sss.vuuid+".json",uidc)
@@ -38,7 +38,7 @@ s ch1=sss.vtext
 fn lang.code("v4")
 s ch2=sss.vtext
 
-utw("@img/alert-outline.png",tit,con,ch1,ch2,false,v)
+utw(null,tit,con,ch1,ch2,false,v)
 {
   fd("$todo/uuid"+uids+".json",ls)
   //删除源文件
@@ -58,7 +58,9 @@ utw("@img/alert-outline.png",tit,con,ch1,ch2,false,v)
 }
 else
 {
-}</eventItme></event>
+}
+uzd(zdq,25)
+//震动</eventItme></event>
 </View>
 <View id="10" did="3" type="TextView">
 <ppt>width=-2
@@ -66,7 +68,9 @@ height=-2
 text=示例：我的第一项笔记
 textColor=#ff000000
 textSize=15sp
-textStyle=bold</ppt>
+textStyle=bold
+singleLine=true
+ellipsize=end</ppt>
 <event></event>
 </View>
 <View id="11" did="3" type="TextView">
@@ -74,7 +78,9 @@ textStyle=bold</ppt>
 height=-2
 text=2024/10/27 15:45:36
 textColor=#696969
-textSize=12sp</ppt>
+textSize=12sp
+singleLine=true
+ellipsize=end</ppt>
 <event></event>
 </View>
 <UIEventset></UIEventset>

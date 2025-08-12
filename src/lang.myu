@@ -1,4 +1,5 @@
 fn age(uiid)
+// 控件本地化
 sj(sss.language,"&lt;"+uiid+"&gt;","&lt;/"+uiid+"&gt;",ghila)
 sl(ghila,"\n",lang)
 for(data;lang)
@@ -16,6 +17,7 @@ for(data;lang)
 }
 end fn
 fn chdh(uiid)
+// 滑动窗体本地化
 sj(sss.language,"&lt;"+uiid+"&gt;","&lt;/"+uiid+"&gt;",ghila)
 sl(ghila,"\n",lang)
 for(data;lang)
@@ -33,6 +35,7 @@ for(data;lang)
 }
 end fn
 fn code(codeid)
+// 代码本地化
 sj(sss.language,"&lt;code&gt;","&lt;/code&gt;",ghila)
 sl(ghila,"\n",lang)
 for(data;lang)
@@ -49,4 +52,11 @@ for(data;lang)
     }
   }
 }
+end fn
+fn readInfo(languageName)
+// 读取语言信息
+fr("@languages/"+languageName+".ule3",lang)
+sj(lang,"&lt;?User-interface-LanguagE-files-v3.0&gt;","&lt;/?&gt;",langInfo)
+sj(langInfo,"[language.name]=","\n",sss.langName)
+sj(langInfo,"[language.author]=","\n",sss.langAuthor)
 end fn

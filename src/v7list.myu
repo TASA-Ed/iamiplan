@@ -6,22 +6,37 @@ sl(idlist,"\,",idsl)
 //读取ID列表
 for(uid;idsl)
 {
-  f(uid==0 || uid=="NaN")
-  {
-  }
-  //忽略ID 0和NaN
-  else
-  {
-    fr("$todo/uuid"+uid+".json",uidc)
-    json(uidc,uujs)
-    json(uujs,"get","content",cont)
-    json(uujs,"get","name",name)
-    json(uujs,"get","settime",st)
-    json(uujs,"get","createtime",ct)
-    //读取数据
-    ula(sss.db,笔记.5="笔记列表",10=name,11=st,-1=ct,-2=uid)
-  }
-  
+	f(uid==0 || uid=="NaN")
+	{
+	}
+	//忽略ID 0和NaN
+	else
+	{
+		fe("$todo/uuid"+uid+".json",uife)
+		f(uife==true)
+		{
+			fr("$todo/uuid"+uid+".json",uidc)
+			json(uidc,uujs)
+			json(uujs,"get","content",cont)
+			json(uujs,"get","name",name)
+            // 反转义特殊字符
+            sr(name,"\\\"","\"",name)
+            sr(cont,"\\\"","\"",cont)
+			json(uujs,"get","settime",st)
+			json(uujs,"get","createtime",ct)
+			//读取数据
+			ula(sss.db,笔记.5="笔记列表",10=name,11=st,-1=ct,-2=uid)
+		}
+        else
+        {
+        	// 清除无效 ID
+        	sr(idlist,uid+"\,","",idlist)
+        	json(sss.tojson,"set","idlist",idlist)
+            json(sss.tojson,"json",jso)
+            fw("$todo/todolist.json",jso)
+        }
+	}
+	
 }
 end fn
 
@@ -30,40 +45,30 @@ fn rdvalue(vnamec)
 sj(sss.value,vnamec+"#=","\n",vusl)
 f(vusl?"loadfile:")
 {
-  sj(vusl,"loadfile:",null,ume)
-  fr(ume,vusl)
+	sj(vusl,"loadfile:",null,ume)
+	fr(ume,vusl)
 }
 sss vals=vusl
 end fn
 
 fn uuid()
 //uuid生成
-sran(1,999,va1)
-sran(1,999,va2)
-sran(1,999,va2)
-sran(1,99,va4)
-ss(va1+va2+va3+va4,vagf)
-sran(1,9,va5)
-s/(va5,vagf)
-sran(1,9999,va6)
-s*(va6,vagf)
+time(4,vatime)
+sran(2,268435456,vagf)
+sran(2,4096,va1)
+s((vatime + vagf) / va1,vagf)
+sran(2,128,va2)
+s(vagf * va2,vagf)
 sss urid=vagf
 end fn
 
 fn uuidfor32()
 //给32位手机提供的UUID生成
-sran(1,999,va1)
-sran(1,999,va2)
-sran(1,999,va3)
-sran(1,99999,va4)
-sran(1,9999,va5)
-ss(va1+va2+va3,vasg)
-ss(va4+va5,vahg)
-s+(vasg,vahg)
-sss urid=vahg
+sran(1,2147483647,vahg)
+sss urid32=vahg
 end fn
 
 fn copying()
-s license="Mi Plan MIT LICENSE Copyright (C) 2024 TASA-Ed Studio"
+s license="Mi Plan MIT LICENSE Copyright (C) 2025 TASA-Ed Studio"
 syso(license)
 end fn
