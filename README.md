@@ -24,4 +24,4 @@ Developer:TASA-Ed Studio
 
 许可证:MIT License
 
-License: MIT License
+License:MIT License
