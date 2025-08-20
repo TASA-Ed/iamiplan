@@ -1,7 +1,7 @@
 # Mi计划 Mi Plan
-一个计划软件。
+一个简单的软件，可以用来做一些笔记，或者记一些账单。
 
-A program software.
+A simple software program that can be used to take notes or record bills.
 
 ## 构建环境 Built environment
 此软件使用[iApp](http://v.dayx.cn:93)构建
